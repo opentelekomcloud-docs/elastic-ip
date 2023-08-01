@@ -10,6 +10,20 @@ Function
 
 This API is used to query EIPs.
 
+.. note::
+
+   Note the following when you use EIPs of the Dedicated Load Balancer (**5_gray**) type:
+
+   -  In **eu-de**, EIPs of the Dedicated Load Balancer (**5_gray**) type cannot be assigned anymore. You can assign EIPs of the BGP (**5_bgp**) type.
+   -  Existing EIPs of the Dedicated Load Balancer (**5_gray**) type can be bound to dedicated or shared load balancers.
+
+      -  The EIP console cannot be used to bind EIPs to or unbind them from dedicated load balancers.
+      -  You can use APIs to bind EIPs to or unbind them from dedicated load balancers. For details, see `Binding an EIP <https://docs.otc.t-systems.com/elastic-ip/api-ref/api_v3/eips/binding_an_eip.html>`__ and `Unbinding an EIP <https://docs.otc.t-systems.com/elastic-ip/api-ref/api_v3/eips/unbinding_an_eip.html>`__.
+      -  EIPs of this type can be bound to or unbound from shared load balancers using the EIP console or APIs.
+      -  You are advised to bind BGP EIPs to or unbind them from dedicated load balancers.
+
+   -  Do not add EIPs of the dedicated load balancer type (**5_gray**) and other types to the same shared bandwidth. Otherwise, the bandwidth limit policy will not take effect.
+
 URI
 ---
 
@@ -30,12 +44,12 @@ GET /v1/{project_id}/publicips
    |                       |                 |                 |                                                                                                                                                                                                                                                             |
    |                       |                 |                 | This parameter can work together with the parameter **limit**.                                                                                                                                                                                              |
    |                       |                 |                 |                                                                                                                                                                                                                                                             |
-   |                       |                 |                 | -  If parameters **marker** and **limit** are not passed, all resource records will be returned.                                                                                                                                                            |
+   |                       |                 |                 | -  If parameters **marker** and **limit** are not passed, resource records on the first page will be returned.                                                                                                                                              |
    |                       |                 |                 | -  If the parameter **marker** is not passed and the value of parameter **limit** is set to **10**, the first 10 resource records will be returned.                                                                                                         |
    |                       |                 |                 | -  If the value of the parameter **marker** is set to the resource ID of the 10th record and the value of parameter **limit** is set to **10**, the 11th to 20th resource records will be returned.                                                         |
    |                       |                 |                 | -  If the value of the parameter **marker** is set to the resource ID of the 10th record and the parameter **limit** is not passed, resource records starting from the 11th records (including 11th) will be returned.                                      |
    +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | limit                 | No              | Integer         | Specifies the number of records that will be returned on each page. The value is from 0 to intmax.                                                                                                                                                          |
+   | limit                 | No              | Integer         | Specifies the number of records that will be returned on each page. The value is from 0 to intmax (2^31-1). The default value is 2000.                                                                                                                      |
    |                       |                 |                 |                                                                                                                                                                                                                                                             |
    |                       |                 |                 | **limit** can be used together with **marker**. For details, see the parameter description of **marker**.                                                                                                                                                   |
    +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,9 +111,11 @@ Response Message
       |                       |                       |    -  **ERROR** (Exceptions)                                                                                                                                            |
       +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | profile               | Object                | Specifies the additional parameters, including the order ID and product ID. For details, see :ref:`Table 4 <eip_api_0003__en-us_topic_0201534309_table66651219193417>`. |
+      |                       |                       |                                                                                                                                                                         |
+      |                       |                       | This parameter is not supported currently.                                                                                                                              |
       +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | type                  | String                | -  Specifies the EIP type.                                                                                                                                              |
-      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP), **5_mailbgp** (Mail BGP), or **5_gray** (Dedicated load balancer, shared load balancer).                                   |
+      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP) or **5_mailbgp** (Mail BGP).                                                                                                |
       |                       |                       | -  Constraints:                                                                                                                                                         |
       |                       |                       |                                                                                                                                                                         |
       |                       |                       |    -  The configured value must be supported by the system.                                                                                                             |
@@ -213,4 +229,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

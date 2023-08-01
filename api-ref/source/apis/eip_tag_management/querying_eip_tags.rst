@@ -15,9 +15,9 @@ URI
 
 GET /v2.0/{project_id}/publicips/{publicip_id}/tags
 
-:ref:`Table 1 <eip_apitag_0002__en-us_topic_0201534160_table27380479>` describes the parameters.
+:ref:`Table 1 <eip_apitag_0002__en-us_topic_0201534160_table450964213214>` describes the parameters.
 
-.. _eip_apitag_0002__en-us_topic_0201534160_table27380479:
+.. _eip_apitag_0002__en-us_topic_0201534160_table450964213214:
 
 .. table:: **Table 1** Parameter description
 
@@ -108,4 +108,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

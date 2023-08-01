@@ -15,23 +15,20 @@ URI
 
 GET /
 
-Request Message
----------------
-
-Request parameter
+Request Parameters
+------------------
 
 None
 
-Example request
+Example Request
+---------------
 
 .. code-block:: text
 
    GET https://{Endpoint}/
 
-Response Message
-----------------
-
-Response parameter
+Response Parameters
+-------------------
 
 .. table:: **Table 1** Response parameter
 
@@ -71,7 +68,8 @@ Response parameter
    | rel       | String | Specifies the relationship between the API link and the API version. |
    +-----------+--------+----------------------------------------------------------------------+
 
-Example response
+Example Response
+----------------
 
 .. code-block::
 
@@ -82,7 +80,7 @@ Example response
                "id": "v2.0",
                "links": [
                    {
-                       "href": "https://None/v2.0",
+                       "href": "https://{Endpoint}/v2.0",
                        "rel": "self"
                    }
                ]
@@ -98,4 +96,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

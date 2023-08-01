@@ -5,7 +5,7 @@
 Permissions Policies and Supported Actions
 ==========================================
 
--  :ref:`Elastic IP <eip_apipermission_0002>`
+-  :ref:`EIP <eip_apipermission_0002>`
 -  :ref:`Bandwidth <eip_apipermission_0003>`
 -  :ref:`Bandwidth (V2.0) <eip_apipermission_0004>`
 -  :ref:`Floating IP Address (OpenStack Neutron API) <eip_apipermission_0006>`
@@ -15,7 +15,7 @@ Permissions Policies and Supported Actions
    :maxdepth: 1
    :hidden: 
 
-   elastic_ip
+   eip
    bandwidth
    bandwidth_v2.0
    floating_ip_address_openstack_neutron_api

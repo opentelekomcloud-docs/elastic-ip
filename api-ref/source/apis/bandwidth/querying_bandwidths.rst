@@ -17,42 +17,40 @@ GET /v1/{project_id}/bandwidths
 
 :ref:`Table 1 <eip_apibandwidth_0002__en-us_topic_0201534198_table62833603>` describes the parameters.
 
-.. _eip_apibandwidth_0002__en-us_topic_0201534198_table62833603:
-
-.. table:: **Table 1** Parameter description
-
-   +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Name                  | Mandatory       | Type            | Description                                                                                                                                                                                                                                                 |
-   +=======================+=================+=================+=============================================================================================================================================================================================================================================================+
-   | project_id            | Yes             | String          | Specifies the project ID.                                                                                                                                                                                                                                   |
-   +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | marker                | No              | String          | Specifies a resource ID for pagination query, indicating that the query starts from the next record of the specified resource ID.                                                                                                                           |
-   |                       |                 |                 |                                                                                                                                                                                                                                                             |
-   |                       |                 |                 | This parameter can work together with the parameter **limit**.                                                                                                                                                                                              |
-   |                       |                 |                 |                                                                                                                                                                                                                                                             |
-   |                       |                 |                 | -  If parameters **marker** and **limit** are not passed, all resource records will be returned.                                                                                                                                                            |
-   |                       |                 |                 | -  If the parameter **marker** is not passed and the value of parameter **limit** is set to **10**, the first 10 resource records will be returned.                                                                                                         |
-   |                       |                 |                 | -  If the value of the parameter **marker** is set to the resource ID of the 10th record and the value of parameter **limit** is set to **10**, the 11th to 20th resource records will be returned.                                                         |
-   |                       |                 |                 | -  If the value of the parameter **marker** is set to the resource ID of the 10th record and the parameter **limit** is not passed, resource records starting from the 11th records (including 11th) will be returned.                                      |
-   +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | limit                 | No              | Integer         | Specifies the number of records that will be returned on each page. The value is from 0 to intmax.                                                                                                                                                          |
-   |                       |                 |                 |                                                                                                                                                                                                                                                             |
-   |                       |                 |                 | **limit** can be used together with **marker**. For details, see the parameter description of **marker**.                                                                                                                                                   |
-   +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | enterprise_project_id | No              | String          | -  Specifies the enterprise project ID. This field can be used to filter out the VPCs associated with a specified enterprise project.                                                                                                                       |
-   |                       |                 |                 | -  The value is **0** or a string that contains a maximum of 36 characters in UUID format with hyphens (-). Value **0** indicates the default enterprise project. To obtain the VPCs bound to all enterprise projects of the user, set **all_granted_eps**. |
-   |                       |                 |                 |                                                                                                                                                                                                                                                             |
-   |                       |                 |                 | .. note::                                                                                                                                                                                                                                                   |
-   |                       |                 |                 |                                                                                                                                                                                                                                                             |
-   |                       |                 |                 |    This parameter is unsupported. Do not use it.                                                                                                                                                                                                            |
-   +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Request Message
 ---------------
 
 -  Request parameter
 
-   None
+   .. _eip_apibandwidth_0002__en-us_topic_0201534198_table62833603:
+
+   .. table:: **Table 1** Request parameters
+
+      +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Name                  | Mandatory       | Type            | Description                                                                                                                                                                                                                                                 |
+      +=======================+=================+=================+=============================================================================================================================================================================================================================================================+
+      | project_id            | Yes             | String          | Specifies the project ID.                                                                                                                                                                                                                                   |
+      +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | marker                | No              | String          | Specifies a resource ID for pagination query, indicating that the query starts from the next record of the specified resource ID.                                                                                                                           |
+      |                       |                 |                 |                                                                                                                                                                                                                                                             |
+      |                       |                 |                 | This parameter can work together with the parameter **limit**.                                                                                                                                                                                              |
+      |                       |                 |                 |                                                                                                                                                                                                                                                             |
+      |                       |                 |                 | -  If parameters **marker** and **limit** are not passed, resource records on the first page will be returned.                                                                                                                                              |
+      |                       |                 |                 | -  If the parameter **marker** is not passed and the value of parameter **limit** is set to **10**, the first 10 resource records will be returned.                                                                                                         |
+      |                       |                 |                 | -  If the value of the parameter **marker** is set to the resource ID of the 10th record and the value of parameter **limit** is set to **10**, the 11th to 20th resource records will be returned.                                                         |
+      |                       |                 |                 | -  If the value of the parameter **marker** is set to the resource ID of the 10th record and the parameter **limit** is not passed, resource records starting from the 11th records (including 11th) will be returned.                                      |
+      +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | limit                 | No              | Integer         | Specifies the number of records that will be returned on each page. The value is from 0 to intmax (2^31-1). The default value is 2000.                                                                                                                      |
+      |                       |                 |                 |                                                                                                                                                                                                                                                             |
+      |                       |                 |                 | **limit** can be used together with **marker**. For details, see the parameter description of **marker**.                                                                                                                                                   |
+      +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | enterprise_project_id | No              | String          | -  Specifies the enterprise project ID. This field can be used to filter out the VPCs associated with a specified enterprise project.                                                                                                                       |
+      |                       |                 |                 | -  The value is **0** or a string that contains a maximum of 36 characters in UUID format with hyphens (-). Value **0** indicates the default enterprise project. To obtain the VPCs bound to all enterprise projects of the user, set **all_granted_eps**. |
+      |                       |                 |                 |                                                                                                                                                                                                                                                             |
+      |                       |                 |                 | .. note::                                                                                                                                                                                                                                                   |
+      |                       |                 |                 |                                                                                                                                                                                                                                                             |
+      |                       |                 |                 |    This parameter is unsupported. Do not use it.                                                                                                                                                                                                            |
+      +-----------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  Example request
 
@@ -136,20 +134,20 @@ Response Message
 
    .. table:: **Table 4** **publicip_info** object
 
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Name                  | Type                  | Description                                                                                                                           |
-      +=======================+=======================+=======================================================================================================================================+
-      | publicip_id           | String                | Specifies the ID of the EIP that uses the bandwidth.                                                                                  |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | publicip_address      | String                | Specifies the obtained EIP if only IPv4 EIPs are available.                                                                           |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | publicip_type         | String                | -  Specifies the EIP type.                                                                                                            |
-      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP), **5_mailbgp** (Mail BGP), or **5_gray** (Dedicated load balancer, shared load balancer). |
-      |                       |                       | -  Constraints:                                                                                                                       |
-      |                       |                       |                                                                                                                                       |
-      |                       |                       |    -  The configured value must be supported by the system.                                                                           |
-      |                       |                       |    -  **publicip_id** is an IPv4 port. If **publicip_type** is not specified, the default value is **5_bgp**.                         |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      | Name                  | Type                  | Description                                                                                                   |
+      +=======================+=======================+===============================================================================================================+
+      | publicip_id           | String                | Specifies the ID of the EIP that uses the bandwidth.                                                          |
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      | publicip_address      | String                | Specifies the obtained EIP if only IPv4 EIPs are available.                                                   |
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      | publicip_type         | String                | -  Specifies the EIP type.                                                                                    |
+      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP) or **5_mailbgp** (Mail BGP).                                      |
+      |                       |                       | -  Constraints:                                                                                               |
+      |                       |                       |                                                                                                               |
+      |                       |                       |    -  The configured value must be supported by the system.                                                   |
+      |                       |                       |    -  **publicip_id** is an IPv4 port. If **publicip_type** is not specified, the default value is **5_bgp**. |
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
 
 -  Example response
 
@@ -248,4 +246,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

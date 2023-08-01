@@ -127,7 +127,7 @@ Response Message
         ],
         "floatingips_links": [
           {
-            "href": "https://network.region.cn-southwest-2.hwclouds.com/v2.0/floatingips_v6?marker=861a4c5b-b17b-4a1d-b653-f3e95dcb3345&page_reverse=true&page_reverse=True",
+            "href": "https://vpc.region.otctest.t-systems.com/v2.0/floatingips_v6?marker=861a4c5b-b17b-4a1d-b653-f3e95dcb3345&page_reverse=true&page_reverse=True",
             "rel": "previous"
           }
         ]
@@ -141,4 +141,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.
