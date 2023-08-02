@@ -7,7 +7,7 @@ Appendix
 
 -  :ref:`VPC Monitoring Metrics <eip_api06_0003>`
 -  :ref:`Status Codes <eip_api05_0001>`
--  :ref:`Error Codes <eip_api05_0002>`
+-  :ref:`Error Codes <errorcode>`
 
 .. toctree::
    :maxdepth: 1

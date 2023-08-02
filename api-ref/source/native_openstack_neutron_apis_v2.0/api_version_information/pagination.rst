@@ -20,10 +20,8 @@ Neutron APIs v2.0 provides the pagination function. You can set parameters **lim
    -  Replace the value of **marker** in the original access request URL. Replace the value of **marker** to the value of **marker** in the value of **herf** if the value of **rel** in the response is **previous**.
    -  Set the value of **page_reverse** to **True**.
 
-Request Message
----------------
-
-Request parameter
+Request Parameters
+------------------
 
 .. table:: **Table 1** Request parameter
 
@@ -37,26 +35,30 @@ Request parameter
    | page_reverse | Boolean | No        | Specifies the page direction. The value can be **True** or **False**.                                                    |
    +--------------+---------+-----------+--------------------------------------------------------------------------------------------------------------------------+
 
-Example request 1
+Example Request
+---------------
+
+-  When **page_reverse** is set to **False**:
 
 .. code-block:: text
 
    GET https://{Endpoint}/v2.0/networks?limit=2&marker=3d42a0d4-a980-4613-ae76-a2cddecff054&page_reverse=False
 
-Example request 2
+-  When **page_reverse** is set to **True**:
 
 .. code-block:: text
 
    GET https://{Endpoint}/v2.0/vpc/peerings?limit=2&marker=e5a0c88e-228e-4e62-a8b0-90825b1b7958&page_reverse=True
 
-Response Message
-----------------
-
-Response parameter
+Response Parameters
+-------------------
 
 None
 
-Example response 1
+Example Response
+----------------
+
+-  When **page_reverse** is set to **False**:
 
 .. code-block::
 
@@ -93,7 +95,7 @@ Example response 1
        ]
    }
 
-Example response 2
+-  When **page_reverse** is set to **True**:
 
 .. code-block::
 
@@ -146,4 +148,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

@@ -15,9 +15,9 @@ URI
 
 DELETE /v2.0/{project_id}/publicips/{publicip_id}/tags/{key}
 
-:ref:`Table 1 <eip_apitag_0003__en-us_topic_0201534220_table27380479>` describes the parameters.
+:ref:`Table 1 <eip_apitag_0003__en-us_topic_0201534220_table5716115334>` describes the parameters.
 
-.. _eip_apitag_0003__en-us_topic_0201534220_table27380479:
+.. _eip_apitag_0003__en-us_topic_0201534220_table5716115334:
 
 .. table:: **Table 1** Parameter description
 
@@ -70,4 +70,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

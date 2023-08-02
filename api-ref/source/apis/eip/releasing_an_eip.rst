@@ -1,14 +1,14 @@
-:original_name: eip_openstackapi_0010.html
+:original_name: eip_api_0005.html
 
-.. _eip_openstackapi_0010:
+.. _eip_api_0005:
 
-Deleting a Floating IP Address
-==============================
+Releasing an EIP
+================
 
 Function
 --------
 
-This API is used to delete a floating IP address.
+This API is used to release an EIP.
 
 .. note::
 
@@ -27,42 +27,53 @@ This API is used to delete a floating IP address.
 URI
 ---
 
-DELETE /v2.0/floatingips/{floatingip_id}
+DELETE /v1/{project_id}/publicips/{publicip_id}
 
-:ref:`Table 1 <eip_openstackapi_0010__en-us_topic_0201534157_table49321613135118>` describes the parameters.
+:ref:`Table 1 <eip_api_0005__en-us_topic_0201534180_table45251091>` describes the parameters.
 
-.. _eip_openstackapi_0010__en-us_topic_0201534157_table49321613135118:
+.. _eip_api_0005__en-us_topic_0201534180_table45251091:
 
 .. table:: **Table 1** Parameter description
 
-   ============= ========= ====== =====================================
-   Parameter     Mandatory Type   Description
-   ============= ========= ====== =====================================
-   floatingip_id Yes       String Specifies the floating IP address ID.
-   ============= ========= ====== =====================================
+   =========== ========= ==========================================
+   Name        Mandatory Description
+   =========== ========= ==========================================
+   project_id  Yes       Specifies the project ID.
+   publicip_id Yes       Specifies the unique identifier of an EIP.
+   =========== ========= ==========================================
 
 Request Message
 ---------------
 
-None
+-  Request parameter
+
+   None
+
+-  Example request
+
+   .. code-block:: text
+
+      DELETE https://{Endpoint}/v1/{project_id}/publicips/{publicip_id}
 
 Response Message
 ----------------
 
-None
+-  Response parameter
 
-Example:
---------
+   None
 
-Example request
+-  Example response
 
-.. code-block:: text
+   None
 
-   DELETE https://{Endpoint}/v2.0/floatingips/a95ec431-8473-463b-aede-34fb048ee3a7
+   Or
 
-Example response
+   .. code-block::
 
-None
+      {
+             "code":"xxx",
+             "message":"xxxxx"
+      }
 
 Status Code
 -----------

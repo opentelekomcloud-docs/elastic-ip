@@ -47,12 +47,11 @@ Request Message
       +-----------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Name                  | Mandatory       | Type            | Description                                                                                                                                                                                                    |
       +=======================+=================+=================+================================================================================================================================================================================================================+
-      | name                  | Yes             | String          | Specifies the bandwidth name.                                                                                                                                                                                  |
-      |                       |                 |                 |                                                                                                                                                                                                                |
-      |                       |                 |                 | The value can contain 1 to 64 characters, including letters, digits, underscores (_), hyphens (-), and periods (.).                                                                                            |
+      | name                  | Yes             | String          | -  Specifies the bandwidth name.                                                                                                                                                                               |
+      |                       |                 |                 | -  The value can contain 1 to 64 characters, including letters, digits, underscores (_), hyphens (-), and periods (.).                                                                                         |
       +-----------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | size                  | Yes             | Integer         | -  Specifies the bandwidth size. The shared bandwidth has a minimum limit, which may vary depending on sites. The default minimum value is 5 Mbit/s.                                                           |
-      |                       |                 |                 | -  The value ranges from 5 Mbit/s to 1000 Mbit/s by default. (The specific range may vary depending on the configuration in each region. You can see the available bandwidth range on the management console.) |
+      |                       |                 |                 | -  The value ranges from 1 Mbit/s to 1000 Mbit/s by default. (The specific range may vary depending on the configuration in each region. You can see the available bandwidth range on the management console.) |
       |                       |                 |                 | -  If a decimal fraction (for example **10.2**) or a character string (for example **"10"**) is specified, the specified value will be automatically converted to an integer.                                  |
       |                       |                 |                 | -  The minimum increment for bandwidth adjustment varies depending on the bandwidth range. The details are as follows:                                                                                         |
       |                       |                 |                 |                                                                                                                                                                                                                |
@@ -106,7 +105,7 @@ Response Message
       |                       |                                                                                                           | -  The value can contain 1 to 64 characters, including letters, digits, underscores (_), hyphens (-), and periods (.).                                                                                         |
       +-----------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | size                  | Integer                                                                                                   | -  Specifies the bandwidth size.                                                                                                                                                                               |
-      |                       |                                                                                                           | -  The value ranges from 5 Mbit/s to 1000 Mbit/s by default. (The specific range may vary depending on the configuration in each region. You can see the available bandwidth range on the management console.) |
+      |                       |                                                                                                           | -  The value ranges from 1 Mbit/s to 1000 Mbit/s by default. (The specific range may vary depending on the configuration in each region. You can see the available bandwidth range on the management console.) |
       +-----------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | id                    | String                                                                                                    | Specifies the bandwidth ID, which uniquely identifies the bandwidth.                                                                                                                                           |
       +-----------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -154,20 +153,20 @@ Response Message
 
    .. table:: **Table 6** **publicip_info** object
 
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Name                  | Type                  | Description                                                                                                                           |
-      +=======================+=======================+=======================================================================================================================================+
-      | publicip_id           | String                | Specifies the ID of the EIP that uses the bandwidth.                                                                                  |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | publicip_address      | String                | Specifies the obtained EIP if only IPv4 EIPs are available.                                                                           |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | publicip_type         | String                | -  Specifies the EIP type.                                                                                                            |
-      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP), **5_mailbgp** (Mail BGP), or **5_gray** (Dedicated load balancer, shared load balancer). |
-      |                       |                       | -  Constraints:                                                                                                                       |
-      |                       |                       |                                                                                                                                       |
-      |                       |                       |    -  The configured value must be supported by the system.                                                                           |
-      |                       |                       |    -  **publicip_id** is an IPv4 port. If **publicip_type** is not specified, the default value is **5_bgp**.                         |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      | Name                  | Type                  | Description                                                                                                   |
+      +=======================+=======================+===============================================================================================================+
+      | publicip_id           | String                | Specifies the ID of the EIP that uses the bandwidth.                                                          |
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      | publicip_address      | String                | Specifies the obtained EIP if only IPv4 EIPs are available.                                                   |
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      | publicip_type         | String                | -  Specifies the EIP type.                                                                                    |
+      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP) or **5_mailbgp** (Mail BGP).                                      |
+      |                       |                       | -  Constraints:                                                                                               |
+      |                       |                       |                                                                                                               |
+      |                       |                       |    -  The configured value must be supported by the system.                                                   |
+      |                       |                       |    -  **publicip_id** is an IPv4 port. If **publicip_type** is not specified, the default value is **5_bgp**. |
+      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
 
 -  Example response
 
@@ -199,4 +198,4 @@ See :ref:`Status Codes <eip_api05_0001>`.
 Error Code
 ----------
 
-See :ref:`Error Codes <eip_api05_0002>`.
+See :ref:`Error Codes <errorcode>`.

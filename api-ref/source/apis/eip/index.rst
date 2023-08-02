@@ -2,8 +2,8 @@
 
 .. _eip_api_0000:
 
-Elastic IP
-==========
+EIP
+===
 
 -  :ref:`Assigning an EIP <eip_api_0001>`
 -  :ref:`Querying an EIP <eip_api_0002>`
