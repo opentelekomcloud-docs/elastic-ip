@@ -21,7 +21,7 @@ Procedure
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. On the console homepage, under **Network**, click **Elastic IP**.
+#. Click |image2| in the upper left corner and choose **Network** > **Elastic IP**.
 
 #. Locate the row that contains the target EIP in the EIP list, click **More** in the **Operation** column, and select **Modify Bandwidth**.
 
@@ -32,3 +32,4 @@ Procedure
 #. Click **Submit**.
 
 .. |image1| image:: /_static/images/en-us_image_0141273034.png
+.. |image2| image:: /_static/images/en-us_image_0000001454059512.png

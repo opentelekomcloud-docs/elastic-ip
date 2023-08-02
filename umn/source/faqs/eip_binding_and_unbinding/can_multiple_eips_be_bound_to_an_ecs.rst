@@ -2,15 +2,17 @@
 
 .. _faq_eip_0022:
 
-Can I Bind Multiple EIPs to an ECS?
-===================================
+Can Multiple EIPs Be Bound to an ECS?
+=====================================
 
 Scenarios
 ---------
 
-You can bind multiple EIPs to an ECS. However, this configuration is not recommended.
+Multiple EIPs can be bound to an ECS, but this operation is not recommended.
 
-To bind multiple EIPs to an ECS, you must manually configure routes.
+If an ECS has multiple NICs attached and you want to bind multiple EIPs to this ECS, you need to configure policy-based routes for these NICs so that these extension NICs can communicate with external works. For details, see :ref:`Configuration Example <faq_eip_0022__en-us_topic_0018073216_section32091531162222>`.
+
+.. _faq_eip_0022__en-us_topic_0018073216_section32091531162222:
 
 Configuration Example
 ---------------------
@@ -33,7 +35,7 @@ Configuration Example
 
 **Example 1:**
 
-If you are required to access public network 11.11.11.0/24 through standby NIC **eth1**, perform the following operations to configure a route:
+If you intend to access public network 11.11.11.0/24 through standby NIC **eth1**, perform the following operations to configure a route:
 
 #. Log in to the ECS.
 
@@ -45,7 +47,7 @@ If you are required to access public network 11.11.11.0/24 through standby NIC *
 
 **Example 2:**
 
-Based on example 1, if you are required to enable routing for default public network traffic through standby NIC **eth1**, perform the following operations to configure a route:
+Based on example 1, if you intend to enable routing for default public network traffic through standby NIC **eth1**, perform the following operations to configure a route:
 
 #. Log in to the ECS.
 

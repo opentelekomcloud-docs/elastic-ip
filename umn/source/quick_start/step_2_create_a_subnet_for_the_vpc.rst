@@ -10,7 +10,7 @@ Scenarios
 
 A VPC comes with a default subnet. If the default subnet cannot meet your requirements, you can create one.
 
-The subnet is configured with DHCP by default. When an ECS in this subnet starts, the ECS automatically obtains an IP address using DHCP.
+A subnet is configured with DHCP by default. When an ECS in this subnet starts, the ECS automatically obtains an IP address using DHCP.
 
 Procedure
 ---------
@@ -19,9 +19,9 @@ Procedure
 
 2. Click |image1| in the upper left corner and select the desired region and project.
 
-3. On the console homepage, under **Network**, click **Virtual Private Cloud**.
+3. Click |image2| in the upper left corner and choose **Network** > **Virtual Private Cloud**.
 
-4. In the navigation pane on the left, click **Subnets**.
+4. In the navigation pane on the left, choose **Virtual Private Cloud** > **Subnets**.
 
 5. Click **Create Subnet**.
 
@@ -109,3 +109,4 @@ When a subnet is created, there are five reserved IP addresses, which cannot be 
 If you configured the default settings under **Advanced Settings** during subnet creation, the reserved IP addresses may be different from the default ones, but there will still be five of them. The specific addresses depend on your subnet settings.
 
 .. |image1| image:: /_static/images/en-us_image_0141273034.png
+.. |image2| image:: /_static/images/en-us_image_0000001500905066.png

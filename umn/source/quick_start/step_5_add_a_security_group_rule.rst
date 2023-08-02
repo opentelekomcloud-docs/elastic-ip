@@ -10,9 +10,6 @@ Scenarios
 
 After you create a security group, you can add rules to the security group. A rule applies either to inbound traffic or outbound traffic. After you add cloud resources to the security group, they are protected by the rules of the group.
 
--  Inbound rules control incoming traffic to cloud resources in the security group.
--  Outbound rules control outgoing traffic from cloud resources in the security group.
-
 Procedure
 ---------
 
@@ -20,11 +17,15 @@ Procedure
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. On the console homepage, under **Network**, click **Virtual Private Cloud**.
+#. Click |image2| in the upper left corner and choose **Network** > **Virtual Private Cloud**.
 
 #. In the navigation pane on the left, choose **Access Control** > **Security Groups**.
 
-#. On the **Security Groups** page, locate the target security group and click **Manage Rule** in the **Operation** column to switch to the page for managing inbound and outbound rules.
+   The security group list is displayed.
+
+#. Locate the row that contains the target security group, click **Manage Rule** in the **Operation** column.
+
+   The page for configuring security group rules is displayed.
 
 #. On the **Inbound Rules** tab, click **Add Rule**. In the displayed dialog box, set required parameters.
 

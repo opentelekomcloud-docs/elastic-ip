@@ -29,7 +29,7 @@ A tag consists of a key and value pair. :ref:`Table 1 <eip_0004__en-us_topic_011
    |                       |    -  Digits                                                        |                       |
    |                       |    -  Special characters, including hyphens (-) and underscores (_) |                       |
    +-----------------------+---------------------------------------------------------------------+-----------------------+
-   | Value                 | -  Can contain a maximum of 43 characters.                          | 192.168.12.10         |
+   | Value                 | -  Can contain a maximum of 43 characters.                          | 3005eip               |
    |                       | -  Can contain only the following character types:                  |                       |
    |                       |                                                                     |                       |
    |                       |    -  Uppercase letters                                             |                       |
@@ -47,27 +47,23 @@ Procedure
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. On the console homepage, under **Network**, click **Elastic IP**.
+#. Click |image2| in the upper left corner and choose **Network** > **Elastic IP**.
 
-#. In the upper right corner of the EIP list, click **Search by Tag**.
+#. Click the search box and then click **Tag** in the drop-down list.
 
-#. In the displayed area, enter the tag key and value of the EIP you are looking for.
-
-   You must specify both the tag key and value. The system will display the EIPs that contain the tag you specified.
-
-#. Click **+** to add another tag key and value.
+#. Select the tag key and value of the EIP.
 
    You can add multiple tag keys and values to refine your search results. If you add more than one tag to search for EIPs, the system will display only the EIPs that contain all of the tags you specified.
 
-#. Click **Search**.
+#. Click **OK**.
 
    The system displays the EIPs you are looking for based on the entered tag keys and values.
 
 **Adding, deleting, editing, and viewing tags on the Tags tab of an EIP**
 
 #. Log in to the management console.
-#. Click |image2| in the upper left corner and select the desired region and project.
-#. On the console homepage, under **Network**, click **Elastic IP**.
+#. Click |image3| in the upper left corner and select the desired region and project.
+#. Click |image4| in the upper left corner and choose **Network** > **Elastic IP**.
 #. On the displayed page, locate the EIP whose tags you want to manage, and click the EIP name.
 #. On the page showing EIP details, click the **Tags** tab and perform desired operations on tags.
 
@@ -90,4 +86,6 @@ Procedure
       Locate the row that contains the tag you want to delete, and click **Delete** in the **Operation** column. In the displayed dialog box, click **Yes**.
 
 .. |image1| image:: /_static/images/en-us_image_0141273034.png
-.. |image2| image:: /_static/images/en-us_image_0141273034.png
+.. |image2| image:: /_static/images/en-us_image_0000001454059512.png
+.. |image3| image:: /_static/images/en-us_image_0141273034.png
+.. |image4| image:: /_static/images/en-us_image_0000001454059512.png
