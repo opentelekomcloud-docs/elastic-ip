@@ -8,17 +8,17 @@ Supported Metrics
 Description
 -----------
 
-This section describes the namespace, list, and measurement dimensions of EIP and bandwidth metrics that you can check on Cloud Eye. You can use APIs or the Cloud Eye console to query the metrics of the monitored metrics and alarms generated for EIPs and bandwidths.
+This section describes the namespace, list, and measurement dimensions of metrics of EIPs and bandwidths that you can check on Cloud Eye. You can use APIs or the Cloud Eye console to query the metrics of the monitored metrics and generated alarms.
 
 Namespace
 ---------
 
-SYS.VPC
+Namespace of EIPs and bandwidths: SYS.VPC
 
 Monitoring Metrics
 ------------------
 
-.. table:: **Table 1** EIP and bandwidth metrics
+.. table:: **Table 1** Metrics of EIPs and bandwidths
 
    +----------------------+--------------------+-------------------------------------------------+-------------+------------------+--------------------------------+
    | ID                   | Name               | Description                                     | Value Range | Monitored Object | Monitoring Interval (Raw Data) |
@@ -39,6 +39,10 @@ Monitoring Metrics
    |                      |                    |                                                 |             |                  |                                |
    |                      |                    | Unit: byte                                      |             |                  |                                |
    +----------------------+--------------------+-------------------------------------------------+-------------+------------------+--------------------------------+
+
+.. note::
+
+   If a bandwidth is increased or decreased, there is a delay of 5 to 10 minutes for the monitoring metrics to update for the new bandwidth.
 
 Dimensions
 ----------
