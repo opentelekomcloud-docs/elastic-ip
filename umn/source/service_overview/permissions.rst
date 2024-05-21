@@ -5,11 +5,11 @@
 Permissions
 ===========
 
-If you need to assign different permissions to employees in your enterprise to access your EIP resources, IAM is a good choice for fine-grained permissions management. IAM provides identity authentication, permissions management, and access control, helping you securely manage access to your resources.
+If you need to assign different permissions to employees in your enterprise to access your EIP resources, IAM is a good choice for fine-grained permissions management. IAM provides identity authentication, permissions management, and access control, helping you securely manage access to your cloud resources.
 
-With IAM, you can use your to create IAM users, and assign permissions to the users to control their access to specific resources. For example, some software developers in your enterprise need to use EIP resources but should not be allowed to delete them or perform any high-risk operations. In this scenario, you can create IAM users for the software developers and grant them only the permissions required for using EIP resources.
+With IAM, you can use your cloud account to create IAM users, and assign permissions to the users to control their access to specific resources. For example, some software developers in your enterprise need to use EIP resources but should not be allowed to delete them or perform any high-risk operations. In this scenario, you can create IAM users for the software developers and grant them only the permissions required for using EIP resources.
 
-If your does not need individual IAM users for permissions management, you may skip over this section.
+If your cloud account does not need individual IAM users for permissions management, you may skip over this section.
 
 IAM can be used free of charge. You pay only for the resources in your account. For more information, see `IAM Service Overview <https://docs.otc.t-systems.com/identity-access-management/umn/service_overview/what_is_iam.html#iam-01-0026>`__.
 
@@ -20,7 +20,7 @@ New IAM users do not have any permissions assigned by default. You need to first
 
 Currently, EIP permissions are included in VPC permissions.
 
-VPC is a project-level service deployed for specific regions. When you set **Scope** to **Region-specific projects** and select the specified projects in the specified regions , the users only have permissions for VPCs in the selected projects. If you set **Scope** to **All resources**, users have permissions for VPCs in all region-specific projects. When accessing VPCs, the users need to switch to the authorized region.
+VPC is a project-level service deployed for specific regions. When you set **Scope** to **Region-specific projects** and select the specified projects in the specified regions, the users only have permissions for VPCs in the selected projects. If you set **Scope** to **All resources**, users have permissions for VPCs in all region-specific projects. When accessing VPCs, the users need to switch to the authorized region.
 
 You can grant permissions by using roles and policies.
 

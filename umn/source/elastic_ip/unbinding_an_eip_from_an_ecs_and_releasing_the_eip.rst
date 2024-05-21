@@ -22,7 +22,7 @@ Notes and Constraints
    -  You are advised to bind BGP EIPs to or unbind them from dedicated load balancers.
 
 -  EIP assigned together with your load balancers will also be displayed in the EIP list.
--  You can only release EIPs that are not bound to any resources.
+-  Only EIPs with no instance bound can be released. If you want to release an EIP with an instance bound, you need to unbind EIP from the instance first.
 
 Procedure
 ---------
@@ -31,15 +31,15 @@ Procedure
 
 #. Log in to the management console.
 #. Click |image1| in the upper left corner and select the desired region and project.
-#. Click |image2| in the upper left corner and choose **Network** > **Elastic IP**.
-#. On the displayed page, locate the row that contains the target EIP, and click **Unbind**.
+#. Click |image2| in the upper left corner, and choose **Network** > **Elastic IP**.
+#. On the displayed page, locate the row that contains the EIP, and click **Unbind**.
 #. Click **Yes** in the displayed dialog box.
 
 **Releasing a single EIP**
 
 #. Log in to the management console.
 #. Click |image3| in the upper left corner and select the desired region and project.
-#. Click |image4| in the upper left corner and choose **Network** > **Elastic IP**.
+#. Click |image4| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, locate the row that contains the target EIP, click **More** and then **Release** in the **Operation** column.
 #. Click **Yes** in the displayed dialog box.
 
@@ -47,7 +47,7 @@ Procedure
 
 #. Log in to the management console.
 #. Click |image5| in the upper left corner and select the desired region and project.
-#. Click |image6| in the upper left corner and choose **Network** > **Elastic IP**.
+#. Click |image6| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, select the EIPs to be unbound.
 #. Click the **Unbind** button located above the EIP list.
 #. Click **Yes** in the displayed dialog box.
@@ -56,16 +56,16 @@ Procedure
 
 #. Log in to the management console.
 #. Click |image7| in the upper left corner and select the desired region and project.
-#. Click |image8| in the upper left corner and choose **Network** > **Elastic IP**.
+#. Click |image8| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, select the EIPs to be released.
 #. Click the **Release** button located above the EIP list.
 #. Click **Yes** in the displayed dialog box.
 
-.. |image1| image:: /_static/images/en-us_image_0141273034.png
-.. |image2| image:: /_static/images/en-us_image_0000001454059512.png
-.. |image3| image:: /_static/images/en-us_image_0141273034.png
-.. |image4| image:: /_static/images/en-us_image_0000001454059512.png
-.. |image5| image:: /_static/images/en-us_image_0141273034.png
-.. |image6| image:: /_static/images/en-us_image_0000001454059512.png
-.. |image7| image:: /_static/images/en-us_image_0141273034.png
-.. |image8| image:: /_static/images/en-us_image_0000001454059512.png
+.. |image1| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image2| image:: /_static/images/en-us_image_0000001818982822.png
+.. |image3| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image4| image:: /_static/images/en-us_image_0000001818982822.png
+.. |image5| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image6| image:: /_static/images/en-us_image_0000001818982822.png
+.. |image7| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image8| image:: /_static/images/en-us_image_0000001818982822.png

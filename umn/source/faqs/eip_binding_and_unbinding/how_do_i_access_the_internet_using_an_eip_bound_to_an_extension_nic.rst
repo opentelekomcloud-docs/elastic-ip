@@ -5,12 +5,12 @@
 How Do I Access the Internet Using an EIP Bound to an Extension NIC?
 ====================================================================
 
-#. After an EIP is bound to an extension NIC, log in to the ECS and use the **route** command to query the route.
+#. After an EIP is bound to an extension NIC, log in to the ECS and use the **route** command to query the routes.
 
    You can run **route --help** to learn more about the **route** command.
 
 
-   .. figure:: /_static/images/en-us_image_0118499137.gif
+   .. figure:: /_static/images/en-us_image_0000001785700150.png
       :alt: **Figure 1** Viewing route information
 
       **Figure 1** Viewing route information
@@ -18,7 +18,7 @@ How Do I Access the Internet Using an EIP Bound to an Extension NIC?
 #. Run the **ifconfig** command to view NIC information.
 
 
-   .. figure:: /_static/images/en-us_image_0118498829.gif
+   .. figure:: /_static/images/en-us_image_0000001832343237.png
       :alt: **Figure 2** Viewing NIC information
 
       **Figure 2** Viewing NIC information

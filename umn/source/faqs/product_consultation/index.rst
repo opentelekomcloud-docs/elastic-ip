@@ -13,8 +13,9 @@ Product Consultation
 -  :ref:`What Is the EIP Assignment Policy? <faq_eip_0016>`
 -  :ref:`Can I Assign a Specific EIP? <faq_eip_0014>`
 -  :ref:`Can a Bandwidth Be Used by Multiple Accounts? <faq_eip_0019>`
--  :ref:`How Do I Change an EIP for an Instance? <faq_eip_0020>`
+-  :ref:`How Do I Unbind an EIP from an Instance and Bind a New EIP to the Instance? <faq_eip_0020>`
 -  :ref:`Why Can't I Find My Assigned EIP on the Management Console? <faq_eip_0025>`
+-  :ref:`What Are the Differences Between 5_bgp, 5_mailbgp, and 5_gray EIPs? <en-us_topic_0000001890444789>`
 
 .. toctree::
    :maxdepth: 1
@@ -28,5 +29,6 @@ Product Consultation
    what_is_the_eip_assignment_policy
    can_i_assign_a_specific_eip
    can_a_bandwidth_be_used_by_multiple_accounts
-   how_do_i_change_an_eip_for_an_instance
+   how_do_i_unbind_an_eip_from_an_instance_and_bind_a_new_eip_to_the_instance
    why_cant_i_find_my_assigned_eip_on_the_management_console
+   what_are_the_differences_between_5_bgp_5_mailbgp_and_5_gray_eips

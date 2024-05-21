@@ -17,7 +17,7 @@ You can bind an EIP to an ECS to enable the ECS to access the Internet.
 ECS, BMS, or VPC
 
 
-.. figure:: /_static/images/en-us_image_0204809678.png
+.. figure:: /_static/images/en-us_image_0000001844205418.png
    :alt: **Figure 1** Binding an EIP to a server
 
    **Figure 1** Binding an EIP to a server
@@ -35,10 +35,10 @@ A DNAT rule enables servers in a VPC to provide services accessible from the Int
 
 **Related Services**
 
-NAT Gateway, Cloud server (ECS and BMS), and VPC
+NAT Gateway, cloud server (ECS and BMSs), and VPC
 
 
-.. figure:: /_static/images/en-us_image_0204809728.png
+.. figure:: /_static/images/en-us_image_0000001844364134.png
    :alt: **Figure 2** EIP used by a NAT gateway
 
    **Figure 2** EIP used by a NAT gateway
@@ -55,7 +55,7 @@ After you attach an EIP to a load balancer, the load balancer can distribute req
 ELB, ECS, and VPC
 
 
-.. figure:: /_static/images/en-us_image_0204809524.png
+.. figure:: /_static/images/en-us_image_0000001844364142.png
    :alt: **Figure 3** EIP used by a load balancer
 
    **Figure 3** EIP used by a load balancer

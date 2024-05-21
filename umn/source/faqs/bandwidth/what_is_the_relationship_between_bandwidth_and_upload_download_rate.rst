@@ -5,7 +5,7 @@
 What Is the Relationship Between Bandwidth and Upload/Download Rate?
 ====================================================================
 
-The bandwidth is measured in bit/s, but the download rate is measured in byte/s.
+The bandwidth is measured in bit/s, indicating the number of binary bits transmitted per second. The download rate is measured in byte/s, indicating the number of bytes transmitted per second.
 
 1 byte = 8 bits, that is, download rate = bandwidth/8
 
