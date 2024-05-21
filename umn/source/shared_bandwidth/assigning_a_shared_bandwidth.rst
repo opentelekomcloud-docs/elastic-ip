@@ -17,14 +17,14 @@ Procedure
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. Click |image2| in the upper left corner and choose **Network** > **Elastic IP**.
+#. Click |image2| in the upper left corner, and choose **Network** > **Elastic IP**.
 
 #. In the navigation pane on the left, choose **Elastic IP and Bandwidth** > **Shared Bandwidths**.
 
 #. In the upper right corner, click **Assign Shared Bandwidth**. On the displayed page, configure parameters as prompted.
 
 
-   .. figure:: /_static/images/en-us_image_0000001163949251.png
+   .. figure:: /_static/images/en-us_image_0000001865582577.png
       :alt: **Figure 1** Assigning Shared Bandwidth
 
       **Figure 1** Assigning Shared Bandwidth
@@ -47,5 +47,5 @@ Procedure
 
 #. Click **Assign Now**.
 
-.. |image1| image:: /_static/images/en-us_image_0141273034.png
-.. |image2| image:: /_static/images/en-us_image_0000001454059512.png
+.. |image1| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image2| image:: /_static/images/en-us_image_0000001818982822.png

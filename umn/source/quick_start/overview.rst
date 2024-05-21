@@ -5,18 +5,18 @@
 Overview
 ========
 
-If your ECSs need to access the Internet (for example, the ECSs functioning as the service nodes for deploying a website), you can follow the procedure shown in :ref:`Figure 1 <qsg_0002__en-us_topic_0118499056_fe457c1ec47c84d6fa3b87210d5b284eb>` to bind EIPs to the ECSs.
+If your ECSs need to access the Internet (for example, the ECSs functioning as the service nodes for deploying a website), you can follow the procedure shown in :ref:`Figure 1 <qsg_0002__en-us_topic_0000001865662277_fe457c1ec47c84d6fa3b87210d5b284eb>` to bind EIPs to the ECSs.
 
-.. _qsg_0002__en-us_topic_0118499056_fe457c1ec47c84d6fa3b87210d5b284eb:
+.. _qsg_0002__en-us_topic_0000001865662277_fe457c1ec47c84d6fa3b87210d5b284eb:
 
-.. figure:: /_static/images/en-us_image_0162332046.png
+.. figure:: /_static/images/en-us_image_0000001818823006.png
    :alt: **Figure 1** Configuring the network
 
    **Figure 1** Configuring the network
 
-:ref:`Table 1 <qsg_0002__en-us_topic_0118499056_t5143cea7d59f4c31b1c56ab35e86f71f>` describes the different tasks in the procedure for configuring the network.
+:ref:`Table 1 <qsg_0002__en-us_topic_0000001865662277_t5143cea7d59f4c31b1c56ab35e86f71f>` describes the different tasks in the procedure for configuring the network.
 
-.. _qsg_0002__en-us_topic_0118499056_t5143cea7d59f4c31b1c56ab35e86f71f:
+.. _qsg_0002__en-us_topic_0000001865662277_t5143cea7d59f4c31b1c56ab35e86f71f:
 
 .. table:: **Table 1** Configuration process description
 

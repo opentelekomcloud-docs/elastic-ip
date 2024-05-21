@@ -8,7 +8,27 @@ Step 5: Add a Security Group Rule
 Scenarios
 ---------
 
-After you create a security group, you can add rules to the security group. A rule applies either to inbound traffic or outbound traffic. After you add cloud resources to the security group, they are protected by the rules of the group.
+A security group is a collection of access control rules to control the traffic that is allowed to reach and leave the cloud resources that it is associated with. The cloud resources can be cloud servers, containers, databases, and more. Cloud resources associated with the same security group have the same security requirements and are mutually trusted within a VPC. A security group consists of inbound and outbound rules.
+
+Each ECS must be associated with at least one security group. If you do not have a security group when creating an ECS, the system provides a default security group.
+
+Like whitelists, security group rules work as follows:
+
+-  Inbound rules control incoming traffic to instances in the security group.
+
+   If an inbound request matches the source in an inbound security group rule, the request is allowed and other requests are denied.
+
+   By default, you do not need to configure deny rules in the inbound direction because requests that do not match allow rules will be denied.
+
+-  Outbound rules control outgoing traffic from instances in the security group.
+
+   If the destination of an outbound security group rule is 0.0.0.0/0, all outbound requests are allowed.
+
+   0.0.0.0/0 represents all IPv4 addresses.
+
+   ::/0 represents all IPv6 addresses.
+
+If the rules of the security group associated with your instance cannot meet your requirements, for example, you need to allow inbound traffic on a specific TCP port, you can add an inbound rule to allow traffic on the TCP port.
 
 Procedure
 ---------
@@ -19,69 +39,115 @@ Procedure
 
 #. Click |image2| in the upper left corner and choose **Network** > **Virtual Private Cloud**.
 
+   The **Virtual Private Cloud** page is displayed.
+
 #. In the navigation pane on the left, choose **Access Control** > **Security Groups**.
 
    The security group list is displayed.
 
-#. Locate the row that contains the target security group, click **Manage Rule** in the **Operation** column.
+#. Locate the row that contains the target security group and click **Manage Rules** in the **Operation** column.
 
    The page for configuring security group rules is displayed.
 
-#. On the **Inbound Rules** tab, click **Add Rule**. In the displayed dialog box, set required parameters.
+#. On the **Inbound Rules** tab, click **Add Rule**.
+
+   The **Add Inbound Rule** dialog box is displayed.
+
+#. Configure required parameters.
 
    You can click **+** to add more inbound rules.
 
+
+   .. figure:: /_static/images/en-us_image_0000001865662817.png
+      :alt: **Figure 1** Add Inbound Rule
+
+      **Figure 1** Add Inbound Rule
+
    .. table:: **Table 1** Inbound rule parameter description
 
-      +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+
-      | Parameter             | Description                                                                                                                                                              | Example Value                |
-      +=======================+==========================================================================================================================================================================+==============================+
-      | Protocol & Port       | **Protocol**: The network protocol. Currently, the value can be **All**, **TCP**, **UDP**, **ICMP**, **GRE**, or others.                                                 | Protocols/TCP (Custom ports) |
-      +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+
-      |                       | **Port**: The port or port range over which the traffic can reach your ECS. The value ranges from 1 to 65535.                                                            | 22, or 22-30                 |
-      +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+
-      | Type                  | The IP address type can be IPv4.                                                                                                                                         | IPv4                         |
-      +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+
-      | Source                | Source of the security group rule. The value can be an IP address or a security group to allow access from IP addresses or instances in the security group. For example: | 0.0.0.0/0                    |
-      |                       |                                                                                                                                                                          |                              |
-      |                       | -  IP address:                                                                                                                                                           |                              |
-      |                       |                                                                                                                                                                          |                              |
-      |                       |    -  Single IP address: 192.168.10.10/32                                                                                                                                |                              |
-      |                       |    -  All IP addresses: 0.0.0.0/0                                                                                                                                        |                              |
-      |                       |    -  IP address range: 192.168.1.0/24                                                                                                                                   |                              |
-      |                       |                                                                                                                                                                          |                              |
-      |                       | -  Security group: sg-A                                                                                                                                                  |                              |
-      +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+
-      | Description           | Supplementary information about the security group rule. This parameter is optional.                                                                                     | ``-``                        |
-      |                       |                                                                                                                                                                          |                              |
-      |                       | The security group rule description can contain a maximum of 255 characters and cannot contain angle brackets (< or >).                                                  |                              |
-      +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+
-
-#. On the **Outbound Rules** tab, click **Add Rule**. In the displayed dialog box, set required parameters.
-
-   You can click **+** to add more outbound rules.
-
-   .. table:: **Table 2** Outbound rule parameter description
-
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      | Parameter             | Description                                                                                                                                                                 | Example Value         |
-      +=======================+=============================================================================================================================================================================+=======================+
-      | Protocol & Port       | **Protocol**: The network protocol. Currently, the value can be **All**, **TCP**, **UDP**, **ICMP**, **GRE**, or others.                                                    | Custom TCP            |
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      |                       | **Port**: The port or port range over which the traffic can leave your ECS. The value ranges from 1 to 65535.                                                               | 22, or 22-30          |
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      | Type                  | The IP address type can be IPv4.                                                                                                                                            | IPv4                  |
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      | Destination           | Destination of the security group rule. The value can be an IP address or a security group to allow access to IP addresses or instances in the security group. For example: | 0.0.0.0/0             |
-      |                       |                                                                                                                                                                             |                       |
-      |                       | For more information, see *Virtual Private Cloud User Guide*.                                                                                                               |                       |
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      | Description           | Supplementary information about the security group rule. This parameter is optional.                                                                                        | ``-``                 |
-      |                       |                                                                                                                                                                             |                       |
-      |                       | The security group rule description can contain a maximum of 255 characters and cannot contain angle brackets (< or >).                                                     |                       |
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Parameter             | Description                                                                                                                                                                                                                                                                                                                                                   | Example Value         |
+      +=======================+===============================================================================================================================================================================================================================================================================================================================================================+=======================+
+      | Protocol              | The network protocol used to match traffic in a security group rule.                                                                                                                                                                                                                                                                                          | TCP                   |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | Currently, the value can be **All**, **TCP**, **UDP**, **GRE**, **ICMP**, or more.                                                                                                                                                                                                                                                                            |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Port                  | The port or port range over which traffic can reach your ECS. The value can be from 1 to 65535.                                                                                                                                                                                                                                                               | 22, or 22-30          |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Type                  | Source IP address version. You can select:                                                                                                                                                                                                                                                                                                                    | IPv4                  |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | -  IPv4                                                                                                                                                                                                                                                                                                                                                       |                       |
+      |                       | -  IPv6                                                                                                                                                                                                                                                                                                                                                       |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Source                | Source of the security group rule. The value can be an IP address or a security group to allow access from IP addresses or instances in the security group.                                                                                                                                                                                                   | 0.0.0.0/0             |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | -  IP address:                                                                                                                                                                                                                                                                                                                                                |                       |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       |    -  Single IP address: 192.168.10.10/32                                                                                                                                                                                                                                                                                                                     |                       |
+      |                       |    -  All IP addresses: 0.0.0.0/0                                                                                                                                                                                                                                                                                                                             |                       |
+      |                       |    -  IP address range: 192.168.1.0/24                                                                                                                                                                                                                                                                                                                        |                       |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | -  **Security group**: The source is from another security group. You can select a security group in the same region from the drop-down list. If there is instance A in security group A and instance B in security group B, and the inbound rule of security group A allows traffic from security group B, traffic is allowed from instance B to instance A. |                       |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | If the source is a security group, this rule will apply to all instances associated with the selected security group.                                                                                                                                                                                                                                         |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Description           | Supplementary information about the security group rule. This parameter is optional.                                                                                                                                                                                                                                                                          | N/A                   |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | The security group rule description can contain a maximum of 255 characters and cannot contain angle brackets (< or >).                                                                                                                                                                                                                                       |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 #. Click **OK**.
 
-.. |image1| image:: /_static/images/en-us_image_0141273034.png
-.. |image2| image:: /_static/images/en-us_image_0000001520959725.png
+   The inbound rule list is displayed.
+
+#. On the **Outbound Rules** tab, click **Add Rule**.
+
+   The **Add Outbound Rule** dialog box is displayed.
+
+#. Configure required parameters.
+
+   You can click **+** to add more outbound rules.
+
+
+   .. figure:: /_static/images/en-us_image_0000001865582629.png
+      :alt: **Figure 2** Add Outbound Rule
+
+      **Figure 2** Add Outbound Rule
+
+   .. table:: **Table 2** Outbound rule parameter description
+
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Parameter             | Description                                                                                                                                                                                                                                                                                                                                                   | Example Value         |
+      +=======================+===============================================================================================================================================================================================================================================================================================================================================================+=======================+
+      | Protocol              | The network protocol used to match traffic in a security group rule.                                                                                                                                                                                                                                                                                          | TCP                   |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | Currently, the value can be **All**, **TCP**, **UDP**, **GRE**, **ICMP**, or more.                                                                                                                                                                                                                                                                            |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Port                  | The port or port range over which traffic can leave your ECS. The value can be from 1 to 65535.                                                                                                                                                                                                                                                               | 22, or 22-30          |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Type                  | Source IP address version. You can select:                                                                                                                                                                                                                                                                                                                    | IPv4                  |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | -  IPv4                                                                                                                                                                                                                                                                                                                                                       |                       |
+      |                       | -  IPv6                                                                                                                                                                                                                                                                                                                                                       |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Destination           | Destination of the security group rule. The value can be an IP address or a security group to allow access to IP addresses or instances in the security group.                                                                                                                                                                                                | 0.0.0.0/0             |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | -  IP address:                                                                                                                                                                                                                                                                                                                                                |                       |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       |    -  Single IP address: 192.168.10.10/32                                                                                                                                                                                                                                                                                                                     |                       |
+      |                       |    -  All IP addresses: 0.0.0.0/0                                                                                                                                                                                                                                                                                                                             |                       |
+      |                       |    -  IP address range: 192.168.1.0/24                                                                                                                                                                                                                                                                                                                        |                       |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | -  **Security group**: The source is from another security group. You can select a security group in the same region from the drop-down list. If there is instance A in security group A and instance B in security group B, and the inbound rule of security group A allows traffic from security group B, traffic is allowed from instance B to instance A. |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Description           | Supplementary information about the security group rule. This parameter is optional.                                                                                                                                                                                                                                                                          | N/A                   |
+      |                       |                                                                                                                                                                                                                                                                                                                                                               |                       |
+      |                       | The security group rule description can contain a maximum of 255 characters and cannot contain angle brackets (< or >).                                                                                                                                                                                                                                       |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+
+#. Click **OK**.
+
+   The outbound rule list is displayed.
+
+.. |image1| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image2| image:: /_static/images/en-us_image_0000001818823082.png

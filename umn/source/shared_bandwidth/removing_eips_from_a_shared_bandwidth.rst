@@ -17,19 +17,19 @@ Procedure
 
 2. Click |image1| in the upper left corner and select the desired region and project.
 
-3. Click |image2| in the upper left corner and choose **Network** > **Elastic IP**.
+3. Click |image2| in the upper left corner, and choose **Network** > **Elastic IP**.
 
 4. In the navigation pane on the left, choose **Elastic IP and Bandwidth** > **Shared Bandwidths**.
 
-5. In the shared bandwidth list, locate the row that contains the bandwidth from which EIPs are to be removed, choose **More** > **Remove EIP** in the **Operation** column, and select the EIPs to be removed in the displayed dialog box.
+5. In the shared bandwidth list, locate the target bandwidth from which you want to remove EIPs, choose **More** > **Remove Public IP Address** in the **Operation** column, and select the EIPs or IPv6 addresses to be removed in the displayed dialog box.
 
 
-   .. figure:: /_static/images/en-us_image_0000001211445065.png
-      :alt: **Figure 1** Remove EIP
+   .. figure:: /_static/images/en-us_image_0000001879005797.png
+      :alt: **Figure 1** Removing EIPs or IPv6 addresses
 
-      **Figure 1** Remove EIP
+      **Figure 1** Removing EIPs or IPv6 addresses
 
 6. Click **OK**.
 
-.. |image1| image:: /_static/images/en-us_image_0141273034.png
-.. |image2| image:: /_static/images/en-us_image_0000001454059512.png
+.. |image1| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image2| image:: /_static/images/en-us_image_0000001649841616.png

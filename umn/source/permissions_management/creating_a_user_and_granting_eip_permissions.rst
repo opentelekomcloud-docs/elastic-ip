@@ -9,7 +9,7 @@ Currently, the EIP service permissions are included in the VPC permissions. For 
 
 This section describes how to use IAM to implement fine-grained permissions control for your VPC resources. With IAM, you can:
 
--  Create IAM users for personnel based on your enterprise's organizational structure. Each IAM user has their own identity credentials for accessing VPC resources.
+-  Create IAM users for employees based on your enterprise's organizational structure. Each IAM user will have their own security credentials for accessing VPC resources.
 -  Grant users only the permissions required to perform a given task based on their job responsibilities.
 -  Entrust a cloud account or cloud service to perform efficient O&M on your VPC resources.
 
@@ -20,7 +20,7 @@ If your cloud account meets your permissions requirements, you can skip this sec
 Prerequisites
 -------------
 
-Before granting permissions to user groups, learn about :ref:`EIP Permissions <overview_permission>` for EIP.
+Before granting permissions to user groups, learn about :ref:`EIP Permissions <overview_permission>`.
 
 To grant permissions for other services, learn about all `permissions <https://docs.otc.t-systems.com/permissions/index.html>`__ supported by IAM.
 
@@ -29,12 +29,12 @@ Process Flow
 
 .. _permission_0003__en-us_topic_0171307068_fig1447123814172:
 
-.. figure:: /_static/images/en-us_image_0204809685.png
-   :alt: **Figure 1** Process for granting EIP permissions
+.. figure:: /_static/images/en-us_image_0000001890445013.png
+   :alt: **Figure 1** Process for granting VPC permissions
 
-   **Figure 1** Process for granting EIP permissions
+   **Figure 1** Process for granting VPC permissions
 
-#. On the IAM console, `create a user group and grant it permissions <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0030.html>`__ (**EIP ReadOnlyAccess** as an example).
+#. On the IAM console, `create a user group and grant it permissions <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0030.html>`__ (**VPC ReadOnlyAccess** as an example).
 
 #. `Create an IAM user and add it to the created user group <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0031.html>`__.
 
@@ -42,8 +42,8 @@ Process Flow
 
    In the authorized region, perform the following operations:
 
-   -  Choose **Service List** > **Elastic IP**. Then click **Buy EIP** on the EIP console. If a message appears indicating that you have insufficient permissions to perform the operation, the **EIPReadOnlyAccess** policy is in effect.
-   -  Choose another service from **Service List**. If a message appears indicating that you have insufficient permissions to access the service, the **EIPReadOnlyAccess** policy is in effect.
+   -  Choose **Service List** > **Elastic IP** and click **Assign EIP** in the upper right corner. If a message appears indicating that you have insufficient permissions to perform the operation, the **VPC ReadOnlyAccess** policy is in effect.
+   -  Choose another service from **Service List**. If a message appears indicating that you have insufficient permissions to access the service, the **VPC ReadOnlyAccess** policy is in effect.
 
 Example Custom Policies
 -----------------------
@@ -59,7 +59,7 @@ Example Custom Policies
                   "Effect": "Allow",
                   "Action": [
                       "
-                           vpc:publicIps:create
+                           vpc:publicIps:create,
                            vpc:publicIps:list
                        "
                   ]
@@ -99,7 +99,6 @@ Example Custom Policies
               {
                   "Effect": "Allow",
                   "Action": [
-                      "ecs:servers:delete",
                       "vpc:publicIps:update",
                       "vpc:publicIps:create"
                   ]

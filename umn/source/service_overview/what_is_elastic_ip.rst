@@ -10,7 +10,7 @@ The Elastic IP (EIP) service enables your cloud resources to communicate with th
 Each EIP can be bound to only one cloud resource and they must be in the same region.
 
 
-.. figure:: /_static/images/en-us_image_0210188011.png
+.. figure:: /_static/images/en-us_image_0000001844364154.png
    :alt: **Figure 1** Connecting to the Internet using an EIP
 
    **Figure 1** Connecting to the Internet using an EIP

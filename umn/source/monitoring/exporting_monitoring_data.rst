@@ -22,7 +22,7 @@ Procedure
 6. Configure the time range, resource type, dimension, monitored object, and metric.
 7. Click **Export**.
 
--  The first row in the exported monitoring report displays the username, region, service, instance name, instance ID, metric name, metric data, time, and timestamp. You can view historical monitoring data.
+-  The first row in the exported CSV file displays the username, region, service, instance name, instance ID, metric name, metric data, time, and timestamp. You can view historical monitoring data.
 -  To convert the time using a Unix timestamp to the time of the target time zone, perform the following steps:
 
    #. Use Excel to open a .csv file.

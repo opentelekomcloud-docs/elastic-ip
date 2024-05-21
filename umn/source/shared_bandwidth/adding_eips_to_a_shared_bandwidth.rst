@@ -13,8 +13,7 @@ Add EIPs to a shared bandwidth and the EIPs can then share that bandwidth. You c
 Notes and Constraints
 ---------------------
 
--  After an EIP is added to a shared bandwidth, the original bandwidth used by the EIP will become invalid and the EIP will start to use the shared bandwidth.
--  The EIP's original dedicated bandwidth will be deleted.
+-  The type of EIPs must be the same as that of the shared bandwidth the EIPs to be added to.
 -  Do not add EIPs of the dedicated load balancer type (**5_gray**) and other types to the same shared bandwidth. Otherwise, the bandwidth limit policy will not take effect.
 
 Procedure
@@ -24,23 +23,29 @@ Procedure
 
 2. Click |image1| in the upper left corner and select the desired region and project.
 
-3. Click |image2| in the upper left corner and choose **Network** > **Elastic IP**.
+3. Click |image2| in the upper left corner, and choose **Network** > **Elastic IP**.
 
 4. In the navigation pane on the left, choose **Elastic IP and Bandwidth** > **Shared Bandwidths**.
 
-5. In the shared bandwidth list, locate the row that contains the shared bandwidth that you want to add EIPs to. In the **Operation** column, choose **More** > **Add EIP**, and select the EIPs to be added.
+5. In the shared bandwidth list, locate the target shared bandwidth that you want to add EIPs to. In the **Operation** column, choose **Add Public IP Address**, and select the EIPs or IPv6 addresses to be added.
+
+
+   .. figure:: /_static/images/en-us_image_0000001832479012.png
+      :alt: **Figure 1** Adding an EIP
+
+      **Figure 1** Adding an EIP
+
+
+   .. figure:: /_static/images/en-us_image_0000001871372156.png
+      :alt: **Figure 2** Adding an IPv6 address
+
+      **Figure 2** Adding an IPv6 address
 
    .. note::
 
-      -  After an EIP is added to a shared bandwidth, the dedicated bandwidth used by the EIP will become invalid and the EIP will start to use the shared bandwidth. The EIP's dedicated bandwidth will be deleted and will no longer be billed.
-
-
-   .. figure:: /_static/images/en-us_image_0000001211006359.png
-      :alt: **Figure 1** Add EIP
-
-      **Figure 1** Add EIP
+      -  After an EIP is added to a shared bandwidth, the dedicated bandwidth used by the EIP will become invalid and the EIP will start to use the shared bandwidth. The EIP will be removed from the original dedicated bandwidth.
 
 6. Click **OK**.
 
-.. |image1| image:: /_static/images/en-us_image_0141273034.png
-.. |image2| image:: /_static/images/en-us_image_0000001454059512.png
+.. |image1| image:: /_static/images/en-us_image_0000001818982734.png
+.. |image2| image:: /_static/images/en-us_image_0000001818982822.png
