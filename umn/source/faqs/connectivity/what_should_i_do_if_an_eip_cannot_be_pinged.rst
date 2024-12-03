@@ -26,7 +26,7 @@ If the fault persists after you have ruled out a cause, check other causes.
 .. table:: **Table 1** Method of locating the failure to ping an EIP
 
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Possible Cause                                               | Solution                                                                                                                                                                                                                                                                                  |
+   | Possible Causes                                              | Solution                                                                                                                                                                                                                                                                                  |
    +==============================================================+===========================================================================================================================================================================================================================================================================================+
    | ICMP access rules are not added to the security group.       | Add ICMP access rules to the security group. For details, see :ref:`Checking Security Group Rules <faq_connect_0004__en-us_topic_0105130172_section1715910911214>`.                                                                                                                       |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ ICMP is used for the ping command. Check whether the security group accommodatin
 
 #. Click |image1| in the upper left corner and select your region and project.
 
-#. Under **Computing**, click **Elastic Cloud Server**.
+#. Under **Computing**, choose **Elastic Cloud Server**.
 
 #. On the **Elastic Cloud Server** page, click the name of the target ECS.
 
@@ -69,7 +69,7 @@ ICMP is used for the ping command. Check whether the security group accommodatin
    .. table:: **Table 2** Security group rules
 
       +--------------------+-----------------+---------------------+---------------------------------------+
-      | Transfer Direction | Type            | Protocol/Port Range | Source                                |
+      | Transfer Direction | Type            | Protocol/Port Range | Destination                           |
       +====================+=================+=====================+=======================================+
       | Outbound           | IPv4            | ICMP/Any            | 0.0.0.0/0                             |
       |                    |                 |                     |                                       |

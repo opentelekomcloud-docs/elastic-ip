@@ -2,9 +2,8 @@
 
 .. _faq_common_0001:
 
-What Is a Quota?
-================
-
+Managing Quotas
+===============
 
 What Is a Quota?
 ----------------
@@ -22,7 +21,7 @@ How Do I View My Quotas?
 
 #. In the upper right corner of the page, click |image2|.
 
-   The **Service Quota** page is displayed.
+   The **Quotas** page is displayed.
 
 #. View the used and total quota of each type of resources on the displayed page.
 

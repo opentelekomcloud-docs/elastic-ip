@@ -9,4 +9,4 @@ If you have released EIPs in a region, the system preferentially assigns EIPs fr
 
 If you do not want an EIP that you have released, assign an EIP first and then release the one that you do not want.
 
-You can assign a specific EIP by calling APIs. For details, see `Elastic IP API Reference <https://docs.otc.t-systems.com/elastic-ip/api-ref/apis/elastic_ip/assigning_an_eip.html#>`__.
+You can assign a specific EIP by calling APIs. For details, see `Elastic IP API Reference <https://docs.otc.t-systems.com/elastic-ip/api-ref/apis/eip/assigning_an_eip.html#eip-api-0001>`__.
