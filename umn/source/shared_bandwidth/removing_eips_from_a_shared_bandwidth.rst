@@ -24,7 +24,7 @@ Procedure
 5. In the shared bandwidth list, locate the target bandwidth from which you want to remove EIPs, choose **More** > **Remove Public IP Address** in the **Operation** column, and select the EIPs or IPv6 addresses to be removed in the displayed dialog box.
 
 
-   .. figure:: /_static/images/en-us_image_0000001879005797.png
+   .. figure:: /_static/images/en-us_image_0000002065190509.png
       :alt: **Figure 1** Removing EIPs or IPv6 addresses
 
       **Figure 1** Removing EIPs or IPv6 addresses

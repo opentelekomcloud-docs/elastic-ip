@@ -2,8 +2,8 @@
 
 .. _monitor_0001:
 
-Monitoring
-==========
+Cloud Eye Monitoring
+====================
 
 -  :ref:`Supported Metrics <monitor_0002>`
 -  :ref:`Viewing Metrics <monitor_0003>`

@@ -33,7 +33,7 @@ Procedure
 #. Click |image1| in the upper left corner and select the desired region and project.
 #. Click |image2| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, locate the row that contains the EIP, and click **Unbind**.
-#. Click **Yes** in the displayed dialog box.
+#. Click **OK**.
 
 **Releasing a single EIP**
 
@@ -41,7 +41,7 @@ Procedure
 #. Click |image3| in the upper left corner and select the desired region and project.
 #. Click |image4| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, locate the row that contains the target EIP, click **More** and then **Release** in the **Operation** column.
-#. Click **Yes** in the displayed dialog box.
+#. Click **OK**.
 
 **Unbinding multiple EIPs at once**
 
@@ -50,7 +50,7 @@ Procedure
 #. Click |image6| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, select the EIPs to be unbound.
 #. Click the **Unbind** button located above the EIP list.
-#. Click **Yes** in the displayed dialog box.
+#. Click **OK**.
 
 **Releasing multiple EIPs at once**
 
@@ -59,7 +59,7 @@ Procedure
 #. Click |image8| in the upper left corner, and choose **Network** > **Elastic IP**.
 #. On the displayed page, select the EIPs to be released.
 #. Click the **Release** button located above the EIP list.
-#. Click **Yes** in the displayed dialog box.
+#. Click **OK**.
 
 .. |image1| image:: /_static/images/en-us_image_0000001818982734.png
 .. |image2| image:: /_static/images/en-us_image_0000001818982822.png
