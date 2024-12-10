@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'eip-umn.tex',
-     u'Elastic IP - User Guide',
+    u'Elastic IP - User Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 
