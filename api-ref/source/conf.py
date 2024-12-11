@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'eip-api-ref.tex',
-     u'Elastic IP - API Reference',
+    u'Elastic IP - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 
