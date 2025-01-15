@@ -91,7 +91,7 @@ Procedure
 #. Configure the parameters as prompted.
 
 
-   .. figure:: /_static/images/en-us_image_0000001865662885.png
+   .. figure:: /_static/images/en-us_image_0000002065211017.png
       :alt: **Figure 1** Create Security Group
 
       **Figure 1** Create Security Group
