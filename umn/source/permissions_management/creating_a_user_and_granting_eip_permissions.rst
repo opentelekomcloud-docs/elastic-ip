@@ -9,7 +9,6 @@ Currently, the EIP service permissions are included in the VPC permissions. For 
 
 This section describes how to use IAM to implement fine-grained permissions control for your VPC resources. With IAM, you can:
 
--  Create IAM users for employees based on your enterprise's organizational structure. Each IAM user will have their own security credentials for accessing VPC resources.
 -  Grant users only the permissions required to perform a given task based on their job responsibilities.
 -  Entrust a cloud account or cloud service to perform efficient O&M on your VPC resources.
 
