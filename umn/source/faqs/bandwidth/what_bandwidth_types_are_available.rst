@@ -5,4 +5,9 @@
 What Bandwidth Types Are Available?
 ===================================
 
-There are dedicated bandwidths and shared bandwidths. A dedicated bandwidth can only be used by one EIP, but a shared bandwidth can be used by multiple EIPs.
+There are dedicated or shared bandwidths.
+
+If an EIP is not added to a shared bandwidth, the EIP uses the dedicated bandwidth no matter how it is billed.
+
+-  Dedicated bandwidths can be used by only one EIP.
+-  Shared bandwidths can be used by multiple EIPs.
