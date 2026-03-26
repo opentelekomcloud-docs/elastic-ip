@@ -13,6 +13,6 @@ If the download speed of an ECS is slow, check the following:
 
 -  The memory usage of the ECS is higher than 80%.
 
-   For details, see section "Why Is My Linux ECS Running Slowly?" or "Why Is My Windows ECS Running Slowly?" in the *Elastic Cloud Server User Guide*.\ `Why Is My Linux ECS Running Slowly? <https://docs.otc.t-systems.com/elastic-cloud-server/umn/faqs/resource_monitoring/why_is_my_linux_ecs_running_slowly.html#en-us-topic-0167429329>`__ or `Why Is My Windows ECS Running Slowly? <https://docs.otc.t-systems.com/elastic-cloud-server/umn/faqs/resource_monitoring/why_is_my_windows_ecs_running_slowly.html#en-us-topic-0167429328>`__
+   For details, see `Why Is My Linux ECS Running Slowly? <https://docs.otc.t-systems.com/elastic-cloud-server/umn/faqs/resource_monitoring/why_is_my_linux_ecs_running_slowly.html#en-us-topic-0167429329>`__ or `Why Is My Windows ECS Running Slowly? <https://docs.otc.t-systems.com/elastic-cloud-server/umn/faqs/resource_monitoring/why_is_my_windows_ecs_running_slowly.html#en-us-topic-0167429328>`__
 
 -  Unstable carrier lines: The network between the local server and the cloud is unstable. Contact the carrier to check the network status.

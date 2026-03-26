@@ -38,7 +38,7 @@ Assigning an EIP
 #. Set the parameters as prompted.
 
 
-   .. figure:: /_static/images/en-us_image_0000001818823034.png
+   .. figure:: /_static/images/en-us_image_0000002556232513.png
       :alt: **Figure 1** Assign EIP
 
       **Figure 1** Assign EIP
@@ -62,13 +62,13 @@ Assigning an EIP
       +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
       | Bandwidth             | The bandwidth size in Mbit/s.                                                                                                                                                                                                                                                                                                                                         | 100                   |
       +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Bandwidth Name        | The name of the bandwidth.                                                                                                                                                                                                                                                                                                                                            | bandwidth             |
+      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
       | EIP Name              | The EIP name.                                                                                                                                                                                                                                                                                                                                                         | eip-test              |
       +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
       | Enterprise Project    | The enterprise project that the EIP belongs to.                                                                                                                                                                                                                                                                                                                       | default               |
       |                       |                                                                                                                                                                                                                                                                                                                                                                       |                       |
       |                       | An enterprise project facilitates project-level management and grouping of cloud resources and users. The name of the default project is **default**.                                                                                                                                                                                                                 |                       |
-      +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      | Bandwidth Name        | The name of the bandwidth.                                                                                                                                                                                                                                                                                                                                            | bandwidth             |
       +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
       | Tag                   | The EIP tags. Each tag contains a key and value pair.                                                                                                                                                                                                                                                                                                                 | -  Key: Ipv4_key1     |
       |                       |                                                                                                                                                                                                                                                                                                                                                                       | -  Value: 3005eip     |
@@ -81,27 +81,18 @@ Assigning an EIP
 
    .. table:: **Table 2** EIP tag requirements
 
-      +-----------------------+------------------------------------------------------------------------+-----------------------+
-      | Parameter             | Requirement                                                            | Example Value         |
-      +=======================+========================================================================+=======================+
-      | Key                   | -  Cannot be left blank.                                               | Ipv4_key1             |
-      |                       | -  The key value must be unique for the same EIP.                      |                       |
-      |                       | -  Can contain up to 36 characters.                                    |                       |
-      |                       | -  Can contain only the following character types:                     |                       |
-      |                       |                                                                        |                       |
-      |                       |    -  Uppercase letters                                                |                       |
-      |                       |    -  Lowercase letters                                                |                       |
-      |                       |    -  Digits                                                           |                       |
-      |                       |    -  Only hyphens (-), underscores (_), and at signs (@) are allowed. |                       |
-      +-----------------------+------------------------------------------------------------------------+-----------------------+
-      | Value                 | -  Can contain up to 43 characters.                                    | 3005eip               |
-      |                       | -  Can contain only the following character types:                     |                       |
-      |                       |                                                                        |                       |
-      |                       |    -  Uppercase letters                                                |                       |
-      |                       |    -  Lowercase letters                                                |                       |
-      |                       |    -  Digits                                                           |                       |
-      |                       |    -  Only underscores (_), hyphens (-), and at signs (@) are allowed. |                       |
-      +-----------------------+------------------------------------------------------------------------+-----------------------+
+      +-----------------------+--------------------------------------------------------------------------------------------------+-----------------------+
+      | Parameter             | Requirements                                                                                     | Example Value         |
+      +=======================+==================================================================================================+=======================+
+      | Key                   | -  For each resource, each tag key must be unique, and each tag key can only have one tag value. | Ipv4_key1             |
+      |                       | -  Cannot be left blank.                                                                         |                       |
+      |                       | -  Can contain a maximum of 128 characters.                                                      |                       |
+      |                       | -  Cannot start or end with a space.                                                             |                       |
+      +-----------------------+--------------------------------------------------------------------------------------------------+-----------------------+
+      | Value                 | -  Can be left blank.                                                                            | 3005eip               |
+      |                       | -  Can contain a maximum of 255 characters.                                                      |                       |
+      |                       | -  Cannot start or end with a space.                                                             |                       |
+      +-----------------------+--------------------------------------------------------------------------------------------------+-----------------------+
 
 #. Click **Create Now**.
 
@@ -127,12 +118,11 @@ An IPv6 client on the internet can access the ECS that has an EIP bound in a VPC
 Follow-Up Procedure
 -------------------
 
-After an ECS with an EIP bound is created, the system generates a domain name in the format of **ecs-**\ *xx-xx-xx-xx*\ **.compute.**\ *xxx*\ **.com** for the EIP by default. *xx-xx-xx-xx* indicates the EIP, and xxx indicates the domain name of the cloud service provider. You can use the domain name to access the ECS.
+After an ECS with an EIP bound is created, the system generates a reverse domain name in the format of ecs-xx-xx-xx-xx.compute.xxx.com for the EIP by default. xx-xx-xx-xx indicates the EIP, and xxx indicates the domain name of the cloud service provider. You can use the reverse domain name to access the ECS.
 
-You can use any of the following commands to obtain the domain name of an EIP:
+You can use any of the following commands to obtain the reverse domain name of an EIP:
 
--  ping -an *EIP*
--  nslookup [-qt=ptr] *EIP*
+-  nslookup -query=ptr *EIP*
 -  dig -x *EIP*
 
 .. |image1| image:: /_static/images/en-us_image_0000001818982734.png

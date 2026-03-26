@@ -27,7 +27,11 @@ Procedure
 
 #. Modify the bandwidth parameters as prompted.
 
-#. Click **Next**.
+
+   .. figure:: /_static/images/en-us_image_0000001818983386.png
+      :alt: **Figure 1** Modifying bandwidth of a pay-per-use EIP
+
+      **Figure 1** Modifying bandwidth of a pay-per-use EIP
 
 #. Click **Submit**.
 
