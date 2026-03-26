@@ -5,8 +5,9 @@
 What Are the Priorities of the Custom Route and EIP If Both Are Configured for an ECS to Enable the ECS to Access the Internet?
 ===============================================================================================================================
 
-The priority of an EIP is higher than that of a custom route in a VPC route table. For example:
+In a VPC route table, routes are matched by priority in the following order: Local route > specific route > EIP route > default route.
 
-The VPC route table of an ECS has a custom route with 0.0.0.0/0 as the destination and NAT gateway as the next hop.
+-  If the destination of a custom route is a specific IP address (not 0.0.0.0/0), it takes priority over the EIP route.
+-  If the destination of a custom route is 0.0.0.0/0, it can match any traffic. In this case, the EIP route has a higher priority.
 
-If an ECS in the VPC has an EIP bound, the VPC route table will have a policy-based route with 0.0.0.0/0 as the destination, which has a higher priority than its custom route. In this case, traffic is forwarded to the EIP and cannot reach the NAT gateway.
+For more information about route priorities, see `Route Tables and Routes <https://docs.otc.t-systems.com/virtual-private-cloud/umn/route_tables/route_tables_and_routes.html>`__.
