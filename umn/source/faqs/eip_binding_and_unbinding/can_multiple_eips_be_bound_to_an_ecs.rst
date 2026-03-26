@@ -10,7 +10,7 @@ Scenarios
 
 Multiple EIPs can be bound to an ECS, but this operation is not recommended.
 
-If an ECS has multiple NICs attached and you want to bind multiple EIPs to this ECS, you need to configure policy-based routes for these NICs so that these extension NICs can communicate with external works. For details, see :ref:`Configuration Example <faq_eip_0022__en-us_topic_0018073216_section32091531162222>`.
+If an ECS has multiple network interfaces attached and you want to bind multiple EIPs to this ECS, you need to configure policy-based routes for these network interfaces so that these extension network interfaces can communicate with external networks. For details, see :ref:`Configuration Example <faq_eip_0022__en-us_topic_0018073216_section32091531162222>`.
 
 .. _faq_eip_0022__en-us_topic_0018073216_section32091531162222:
 

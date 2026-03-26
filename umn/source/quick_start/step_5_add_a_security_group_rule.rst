@@ -30,8 +30,8 @@ Like whitelists, security group rules work as follows:
 
 If the rules of the security group associated with your instance cannot meet your requirements, for example, you need to allow inbound traffic on a specific TCP port, you can add an inbound rule to allow traffic on the TCP port.
 
-Procedure
----------
+Adding Rules to a Security Group
+--------------------------------
 
 #. Log in to the management console.
 

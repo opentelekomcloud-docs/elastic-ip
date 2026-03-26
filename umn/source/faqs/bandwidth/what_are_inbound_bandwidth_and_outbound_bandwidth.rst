@@ -7,7 +7,10 @@ What Are Inbound Bandwidth and Outbound Bandwidth?
 
 Bandwidth refers to the maximum amount of data that can be transmitted in a given amount of time (generally one second). A larger bandwidth value indicates a stronger transmission capability. Bandwidth is classified into public bandwidth and private bandwidth.
 
-Public bandwidth is the bandwidth consumed when data is transferred between cloud instances and the Internet. Public bandwidth is classified into inbound bandwidth and outbound bandwidth. For details the outbound bandwidth and inbound bandwidth, see :ref:`Table 1 <faq_bandwidth_0007__en-us_topic_0171168670_table14709192372310>`.
+Public bandwidth is the bandwidth consumed when data is transferred between cloud instances and the Internet. Public bandwidth is classified into inbound bandwidth and outbound bandwidth. For details about the outbound bandwidth and inbound bandwidth, see :ref:`Table 1 <faq_bandwidth_0007__en-us_topic_0171168670_table14709192372310>`.
+
+-  **Outbound Bandwidth** means the same thing as **Upstream Bandwidth** or **Upstream Traffic** on the Cloud Eye console.
+-  **Inbound Bandwidth** means the same thing as **Downstream Bandwidth** and **Downstream Traffic** on the Cloud Eye console.
 
 
 .. figure:: /_static/images/en-us_image_0000001486922646.png

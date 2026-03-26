@@ -24,7 +24,7 @@ EIP Not in the Current Region
 #. Locate the EIP.
 
    a. In the upper left corner of the console, select the region to which the EIP to be queried belongs.
-   b. Click |image1| in the upper left corner and choose **Network** > **Elastic IP**.
+   b. Click |image1| in the upper left corner of the page to expand the service list. Choose **Network** > **Elastic IP**.
    c. In the EIP list, view the assigned EIP.
 
-.. |image1| image:: /_static/images/en-us_image_0000001454059512.png
+.. |image1| image:: /_static/images/en-us_image_0000002556425923.png
