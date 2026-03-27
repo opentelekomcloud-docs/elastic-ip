@@ -3,7 +3,11 @@
     merge-mode: squash-merge
     default-branch: main
     templates:
-      - helpcenter-base-jobs
+      - helpcenter-base-jobs-no-check
+    vars:
+      sphinx_pdf_files:
+        - eip-api-ref.pdf
+        - eip-umn.pdf
     check:
       jobs:
         - noop
