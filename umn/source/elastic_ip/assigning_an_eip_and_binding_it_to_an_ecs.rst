@@ -115,7 +115,7 @@ Binding an EIP
 #. Select the instance that you want to bind the EIP to.
 
 
-   .. figure:: /_static/images/en-us_image_0000001865662761.png
+   .. figure:: /_static/images/en-us_image_0000002065116093.png
       :alt: **Figure 2** Bind EIP
 
       **Figure 2** Bind EIP
