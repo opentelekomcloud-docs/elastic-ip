@@ -5,10 +5,10 @@
 EIP Tag Management
 ==================
 
--  :ref:`Creating a Tag for an EIP <eip_apitag_0001>`
+-  :ref:`Adding a Tag to an EIP <eip_apitag_0001>`
 -  :ref:`Querying EIP Tags <eip_apitag_0002>`
--  :ref:`Deleting an EIP Tag <eip_apitag_0003>`
--  :ref:`Batch Creating or Deleting EIP Tags <eip_apitag_0004>`
+-  :ref:`Deleting a Tag from an EIP <eip_apitag_0003>`
+-  :ref:`Batch Adding or Deleting EIP Tags <eip_apitag_0004>`
 -  :ref:`Querying EIPs by Tag <eip_apitag_0005>`
 -  :ref:`Querying EIP Tags in a Specified Project <eip_apitag_0006>`
 
@@ -16,9 +16,9 @@ EIP Tag Management
    :maxdepth: 1
    :hidden: 
 
-   creating_a_tag_for_an_eip
+   adding_a_tag_to_an_eip
    querying_eip_tags
-   deleting_an_eip_tag
-   batch_creating_or_deleting_eip_tags
+   deleting_a_tag_from_an_eip
+   batch_adding_or_deleting_eip_tags
    querying_eips_by_tag
    querying_eip_tags_in_a_specified_project

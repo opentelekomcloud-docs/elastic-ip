@@ -20,7 +20,7 @@ This API is used to query details about a specified floating IP address, includi
       -  The EIP console cannot be used to bind EIPs to or unbind them from dedicated load balancers.
       -  You can use APIs to bind EIPs to or unbind them from dedicated load balancers. For details, see `Binding an EIP <https://docs.otc.t-systems.com/elastic-ip/api-ref/api_v3/eips/binding_an_eip.html>`__ and `Unbinding an EIP <https://docs.otc.t-systems.com/elastic-ip/api-ref/api_v3/eips/unbinding_an_eip.html>`__.
       -  EIPs of this type can be bound to or unbound from shared load balancers using the EIP console or APIs.
-      -  You are advised to bind BGP EIPs to or unbind them from dedicated load balancers.
+      -  You are advised to bind or unbind BGP EIPs to or from dedicated load balancers.
 
    -  Do not add EIPs of the dedicated load balancer type (**5_gray**) and other types to the same shared bandwidth. Otherwise, the bandwidth limit policy will not take effect.
 
@@ -29,13 +29,13 @@ URI
 
 GET /v2.0/floatingips/{floatingip_id}
 
-Request Message
----------------
+Request Parameters
+------------------
 
 None
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 .. table:: **Table 1** Response parameter
 
@@ -50,7 +50,7 @@ Response Message
 .. table:: **Table 2** **floatingip** objects
 
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
-   | Attribute             | Type                  | Description                                                                                    |
+   | Parameter             | Type                  | Description                                                                                    |
    +=======================+=======================+================================================================================================+
    | status                | String                | Specifies the floating IP address status. The value can be **ACTIVE**, **DOWN**, or **ERROR**. |
    |                       |                       |                                                                                                |
@@ -95,16 +95,17 @@ Response Message
    |                       |                       | Format: *yyyy-MM-ddTHH:mm:ss*                                                                  |
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
 
-Example:
---------
-
-Example request
+Example Request
+---------------
 
 .. code-block:: text
 
    GET https://{Endpoint}/v2.0/floatingips/1a3a2818-d9b4-4a9c-8a19-5252c499d1cd
 
-Example response
+Example Response
+----------------
+
+**Status code: 200**
 
 .. code-block::
 

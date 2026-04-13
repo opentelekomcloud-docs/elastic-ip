@@ -8,7 +8,7 @@ Querying the Quota
 Function
 --------
 
-This API is used to query network resource quotas of a tenant. The network resources include VPCs, subnets, security groups, security group rules, EIPs, and VPNs.
+This API is used to query the network resource quotas of a tenant. The network resources include VPCs, subnets, security groups, security group rules, EIPs, VPNs, and more.
 
 .. note::
 
@@ -47,13 +47,14 @@ Example:
    |                 |                 |                 |    -  **vpn**: VPN                                                           |
    |                 |                 |                 |    -  **vpcPeer**: VPC peering connection                                    |
    |                 |                 |                 |    -  **loadbalancer**: Load balancer                                        |
-   |                 |                 |                 |    -  **listener**: Listener                                                 |
+   |                 |                 |                 |    -  **listener**: Load balancer listener                                   |
    |                 |                 |                 |    -  **physicalConnect**: Direct Connect connection                         |
    |                 |                 |                 |    -  **virtualInterface**: Virtual interface                                |
    |                 |                 |                 |    -  **firewall**: Firewall                                                 |
    |                 |                 |                 |    -  **shareBandwidthIP**: IP address added to a shared bandwidth           |
    |                 |                 |                 |    -  **shareBandwidth**: Shared bandwidth                                   |
-   |                 |                 |                 |    -  **flow_log**: VPC fow log                                              |
+   |                 |                 |                 |    -  **address_group**: IP address group                                    |
+   |                 |                 |                 |    -  **flow_log**: VPC flow log                                             |
    |                 |                 |                 |    -  **vpcContainRoutetable**: Number of route tables associated with a VPC |
    |                 |                 |                 |    -  **routetableContainRoutes**: Number of routes in a route table         |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------+
@@ -68,18 +69,18 @@ Response Parameters
 
 .. table:: **Table 2** Response parameter
 
-   +--------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-   | Name   | Type                                                                                 | Description                                                                                                                  |
-   +========+======================================================================================+==============================================================================================================================+
-   | quotas | :ref:`quotas <eip_apiquota_0001__en-us_topic_0201534147_table11308015155544>` object | Specifies the quota object. For details, see :ref:`Table 3 <eip_apiquota_0001__en-us_topic_0201534147_table11308015155544>`. |
-   +--------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   +-----------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter | Type                                                                                 | Description                                                                                                                  |
+   +===========+======================================================================================+==============================================================================================================================+
+   | quotas    | :ref:`quotas <eip_apiquota_0001__en-us_topic_0201534147_table11308015155544>` object | Specifies the quota object. For details, see :ref:`Table 3 <eip_apiquota_0001__en-us_topic_0201534147_table11308015155544>`. |
+   +-----------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 .. _eip_apiquota_0001__en-us_topic_0201534147_table11308015155544:
 
 .. table:: **Table 3** Description of the **quotas** field
 
    +-----------+-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | Name      | Type                                                                                      | Description                                                                                                               |
+   | Parameter | Type                                                                                      | Description                                                                                                               |
    +===========+===========================================================================================+===========================================================================================================================+
    | resources | Array of :ref:`resource <eip_apiquota_0001__en-us_topic_0201534147_table8208684>` objects | Specifies the resource objects. For details, see :ref:`Table 4 <eip_apiquota_0001__en-us_topic_0201534147_table8208684>`. |
    +-----------+-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -89,7 +90,7 @@ Response Parameters
 .. table:: **Table 4** Description of the **resource** field
 
    +-----------------------+-----------------------+------------------------------------------------------------------------------+
-   | Name                  | Type                  | Description                                                                  |
+   | Parameter             | Type                  | Description                                                                  |
    +=======================+=======================+==============================================================================+
    | type                  | String                | -  Specifies the resource type.                                              |
    |                       |                       | -  Values:                                                                   |
@@ -102,13 +103,14 @@ Response Parameters
    |                       |                       |    -  **vpn**: VPN                                                           |
    |                       |                       |    -  **vpcPeer**: VPC peering connection                                    |
    |                       |                       |    -  **loadbalancer**: Load balancer                                        |
-   |                       |                       |    -  **listener**: Listener                                                 |
+   |                       |                       |    -  **listener**: Load balancer listener                                   |
    |                       |                       |    -  **physicalConnect**: Direct Connect connection                         |
    |                       |                       |    -  **virtualInterface**: Virtual interface                                |
    |                       |                       |    -  **firewall**: Firewall                                                 |
    |                       |                       |    -  **shareBandwidthIP**: IP address added to a shared bandwidth           |
    |                       |                       |    -  **shareBandwidth**: Shared bandwidth                                   |
-   |                       |                       |    -  **flow_log**: VPC fow log                                              |
+   |                       |                       |    -  **address_group**: IP address group                                    |
+   |                       |                       |    -  **flow_log**: VPC flow log                                             |
    |                       |                       |    -  **vpcContainRoutetable**: Number of route tables associated with a VPC |
    |                       |                       |    -  **routetableContainRoutes**: Number of routes in a route table         |
    +-----------------------+-----------------------+------------------------------------------------------------------------------+
@@ -176,6 +178,18 @@ Example Response
                    "min": 0
                },
                {
+                   "type":"physicalConnect",
+                   "used":0,
+                   "quota":10,
+                   "min":0
+               },
+               {
+                   "type":"virtualInterface",
+                   "used":0,
+                   "quota":50,
+                   "min":0
+               },
+               {
                    "type": "firewall",
                    "used": 0,
                    "quota": 200,
@@ -206,6 +220,12 @@ Example Response
                    "min": 0
                },
                {
+                   "type": "flow_log",
+                   "used": 0,
+                   "quota": 10,
+                   "min": 0
+               },
+               {
                    "type": "vpcContainRoutetable",
                    "used": 0,
                    "quota": 1,
@@ -216,7 +236,13 @@ Example Response
                    "used": 0,
                    "quota": 200,
                    "min": 0
-               }
+               },
+               {
+                    "type": "address_group",
+                    "used": 0,
+                    "quota": 50,
+                    "min": 0
+                }
            ]
        }
    }

@@ -22,22 +22,22 @@ POST /v2.0/{project_id}/bandwidths/{bandwidth_id}/remove
 .. table:: **Table 1** Parameter description
 
    +--------------+-----------+----------------------------------------------------------------------+
-   | Name         | Mandatory | Description                                                          |
+   | Parameter    | Mandatory | Description                                                          |
    +==============+===========+======================================================================+
    | project_id   | Yes       | Specifies the project ID.                                            |
    +--------------+-----------+----------------------------------------------------------------------+
    | bandwidth_id | Yes       | Specifies the bandwidth ID, which uniquely identifies the bandwidth. |
    +--------------+-----------+----------------------------------------------------------------------+
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
    .. table:: **Table 2** Request parameter
 
       +-----------+-----------+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Name      | Mandatory | Type                                                                                        | Description                                                                                                                           |
+      | Parameter | Mandatory | Type                                                                                        | Description                                                                                                                           |
       +===========+===========+=============================================================================================+=======================================================================================================================================+
       | bandwidth | Yes       | :ref:`bandwidth <eip_apisharedbandwidth_0005__en-us_topic_0201534216_table31854691>` object | Specifies the bandwidth objects. For details, see :ref:`Table 3 <eip_apisharedbandwidth_0005__en-us_topic_0201534216_table31854691>`. |
       +-----------+-----------+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
@@ -47,7 +47,7 @@ Request Message
    .. table:: **Table 3** Description of the **bandwidth** field
 
       +-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Name            | Mandatory       | Type                                                                                                      | Description                                                                                                                                                                                                      |
+      | Parameter       | Mandatory       | Type                                                                                                      | Description                                                                                                                                                                                                      |
       +=================+=================+===========================================================================================================+==================================================================================================================================================================================================================+
       | publicip_info   | Yes             | Array of :ref:`publicip_info <eip_apisharedbandwidth_0005__en-us_topic_0201534216_table30936422>` objects | -  Specifies information about the EIP to be removed from the bandwidth. For details, see :ref:`Table 4 <eip_apisharedbandwidth_0005__en-us_topic_0201534216_table30936422>`.                                    |
       |                 |                 |                                                                                                           | -  The bandwidth, whose type is **WHOLE**, can be used by multiple EIPs. The number of EIPs varies depending on the tenant quota. By default, a shared bandwidth can be used by up to 20 EIPs.                   |
@@ -70,7 +70,7 @@ Request Message
    .. table:: **Table 4** **publicip_info** object
 
       +-------------+-----------+--------+------------------------------------------------------+
-      | Name        | Mandatory | Type   | Description                                          |
+      | Parameter   | Mandatory | Type   | Description                                          |
       +=============+===========+========+======================================================+
       | publicip_id | Yes       | String | Specifies the ID of the EIP that uses the bandwidth. |
       +-------------+-----------+--------+------------------------------------------------------+
@@ -97,8 +97,8 @@ Request Message
           }
       }
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 

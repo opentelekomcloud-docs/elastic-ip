@@ -21,8 +21,8 @@ URI
 
 POST /v2.0/eip/floatingips_v6
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
@@ -77,8 +77,8 @@ Request Message
        }
    }
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 

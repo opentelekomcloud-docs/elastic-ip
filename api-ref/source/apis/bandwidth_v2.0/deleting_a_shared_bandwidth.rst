@@ -22,7 +22,7 @@ DELETE /v2.0/{project_id}/bandwidths/{bandwidth_id}
 .. table:: **Table 1** Parameter description
 
    +-----------------------+-----------------------+----------------------------------------------------------------------+
-   | Name                  | Mandatory             | Description                                                          |
+   | Parameter             | Mandatory             | Description                                                          |
    +=======================+=======================+======================================================================+
    | project_id            | Yes                   | Specifies the project ID.                                            |
    +-----------------------+-----------------------+----------------------------------------------------------------------+
@@ -31,8 +31,8 @@ DELETE /v2.0/{project_id}/bandwidths/{bandwidth_id}
    |                       |                       | Currently, only the shared bandwidth can be deleted.                 |
    +-----------------------+-----------------------+----------------------------------------------------------------------+
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
@@ -44,8 +44,8 @@ Request Message
 
       DELETE https://{Endpoint}/v2.0/{project_id}/bandwidths/{bandwidth_id}
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 
