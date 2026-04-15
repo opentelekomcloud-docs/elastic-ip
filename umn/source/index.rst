@@ -9,7 +9,7 @@ Elastic IP - User Guide
    quick_start/index
    elastic_ip/index
    shared_bandwidth/index
-   cloud_eye_monitoring/index
+   cloud_eye/index
    permissions_management/index
    faqs/index
    change_history

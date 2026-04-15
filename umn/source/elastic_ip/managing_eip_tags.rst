@@ -16,27 +16,18 @@ A tag consists of a key and value pair. :ref:`Table 1 <eip_0004__en-us_topic_000
 
 .. table:: **Table 1** EIP tag requirements
 
-   +-----------------------+------------------------------------------------------------------------+-----------------------+
-   | Parameter             | Requirement                                                            | Example Value         |
-   +=======================+========================================================================+=======================+
-   | Key                   | -  Cannot be left blank.                                               | Ipv4_key1             |
-   |                       | -  Must be unique for each EIP.                                        |                       |
-   |                       | -  Can contain a maximum of 36 characters.                             |                       |
-   |                       | -  Can contain only the following character types:                     |                       |
-   |                       |                                                                        |                       |
-   |                       |    -  Uppercase letters                                                |                       |
-   |                       |    -  Lowercase letters                                                |                       |
-   |                       |    -  Digits                                                           |                       |
-   |                       |    -  Only hyphens (-), underscores (_), and at signs (@) are allowed. |                       |
-   +-----------------------+------------------------------------------------------------------------+-----------------------+
-   | Value                 | -  Can contain a maximum of 43 characters.                             | 3005eip               |
-   |                       | -  Can contain only the following character types:                     |                       |
-   |                       |                                                                        |                       |
-   |                       |    -  Uppercase letters                                                |                       |
-   |                       |    -  Lowercase letters                                                |                       |
-   |                       |    -  Digits                                                           |                       |
-   |                       |    -  Only underscores (_), hyphens (-), and at signs (@) are allowed. |                       |
-   +-----------------------+------------------------------------------------------------------------+-----------------------+
+   +-----------------------+--------------------------------------------------------------------------------------------------+-----------------------+
+   | Parameter             | Requirements                                                                                     | Example Value         |
+   +=======================+==================================================================================================+=======================+
+   | Key                   | -  For each resource, each tag key must be unique, and each tag key can only have one tag value. | Ipv4_key1             |
+   |                       | -  Cannot be left blank.                                                                         |                       |
+   |                       | -  Can contain a maximum of 128 characters.                                                      |                       |
+   |                       | -  Cannot start or end with a space.                                                             |                       |
+   +-----------------------+--------------------------------------------------------------------------------------------------+-----------------------+
+   | Value                 | -  Can be left blank.                                                                            | 3005eip               |
+   |                       | -  Can contain a maximum of 255 characters.                                                      |                       |
+   |                       | -  Cannot start or end with a space.                                                             |                       |
+   +-----------------------+--------------------------------------------------------------------------------------------------+-----------------------+
 
 Procedure
 ---------
@@ -60,30 +51,28 @@ Procedure
 **Adding, deleting, editing, and viewing tags on the Tags tab of an EIP**
 
 #. Log in to the management console.
+
 #. Click |image3| in the upper left corner and select the desired region and project.
+
 #. Click |image4| in the upper left corner, and choose **Network** > **Elastic IP**.
+
 #. On the displayed page, locate the EIP whose tags you want to manage, and click the EIP name.
-#. On the page showing EIP details, click the **Tags** tab and perform desired operations on tags.
 
-   -  View tags.
+   The EIP details page is displayed.
 
-      On the **Tags** tab, you can view details about tags added to the current EIP, including the number of tags and the key and value of each tag.
+#. Click the **Tags** tab and then click **Edit Tag** in the upper left corner above the tag list.
 
-   -  Add a tag.
+   The **Edit Tag** page is displayed.
 
-      Click **Add Tag** in the upper left corner. In the displayed **Add Tag** dialog box, enter the tag key and value, and click **OK**.
+#. Perform the following operations on the tags as required:
 
-   -  Edit a tag.
-
-      Locate the row that contains the tag you want to edit, and click **Edit** in the **Operation** column. Enter the new tag value, and click **OK**.
-
-      The tag key cannot be modified.
-
-   -  Delete a tag.
-
-      Locate the row that contains the tag you want to delete, and click **Delete** in the **Operation** column. In the displayed dialog box, click **OK**.
+   -  Adding a tag: Click |image5|, enter a tag key and value, and click **OK**.
+   -  Modifying a tag: Click |image6| next to the target tag key or value to delete the original value, enter a new value, and click **OK**.
+   -  Deleting a tag: Click **Delete** next to the target tag and click **OK**.
 
 .. |image1| image:: /_static/images/en-us_image_0000001818982734.png
 .. |image2| image:: /_static/images/en-us_image_0000001818982822.png
 .. |image3| image:: /_static/images/en-us_image_0000001818982734.png
 .. |image4| image:: /_static/images/en-us_image_0000001818982822.png
+.. |image5| image:: /_static/images/en-us_image_0000002555651817.png
+.. |image6| image:: /_static/images/en-us_image_0000002555531839.png

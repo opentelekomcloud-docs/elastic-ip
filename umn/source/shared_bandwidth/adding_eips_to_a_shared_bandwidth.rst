@@ -25,7 +25,7 @@ Procedure
 
 3. Click |image2| in the upper left corner, and choose **Network** > **Elastic IP**.
 
-4. In the navigation pane on the left, choose **Elastic IP and Bandwidth** > **Shared Bandwidths**.
+4. In the navigation pane on the left, choose **Internet Access** > **Shared Bandwidths**.
 
 5. In the shared bandwidth list, locate the target shared bandwidth that you want to add EIPs to. In the **Operation** column, choose **Add Public IP Address**, and select the EIPs or IPv6 addresses to be added.
 

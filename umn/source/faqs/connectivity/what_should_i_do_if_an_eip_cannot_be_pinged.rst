@@ -34,9 +34,9 @@ If the fault persists after you have ruled out a cause, check other causes.
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Ping operations are prohibited on the ECS.                   | Allow ping operations on the ECS. For details, see :ref:`Checking Whether Ping Operations Have Been Disabled on the ECS <faq_connect_0004__en-us_topic_0105130172_section42301821174115>`.                                                                                                |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Network ACL is associated.                                   | If the VPC is associated with a network ACL, check the network ACL rules. For details, see :ref:`Checking ACL Rules <faq_connect_0004__en-us_topic_0105130172_en-us_topic_0096302298_section374314592329>`.                                                                               |
+   | Network ACL is associated.                                   | If the VPC is associated with a network ACL, check the network ACL rules. For details, see :ref:`Checking Network ACL Rules <faq_connect_0004__en-us_topic_0105130172_en-us_topic_0096302298_section374314592329>`.                                                                       |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | A network exception occurred.                                | Use another ECS in the same region to check whether the local network is functional. For details, see :ref:`Checking Whether the Network Is Functional <faq_connect_0004__en-us_topic_0105130172_section108152100162>`.                                                                   |
+   | A network exception occurred.                                | Use another ECS in the same region to check whether the local network is functional. For details, see :ref:`Checking Whether the Network Is Normal <faq_connect_0004__en-us_topic_0105130172_section108152100162>`.                                                                       |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Routes are incorrectly configured if multiple NICs are used. | If the network is inaccessible due to an extension NIC, the fault is generally caused by incorrect route configurations. To resolve this issue, see :ref:`Checking the ECS Route Configuration If Multiple NICs Are Used <faq_connect_0004__en-us_topic_0105130172_section175172388145>`. |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -50,13 +50,13 @@ ICMP is used for the ping command. Check whether the security group accommodatin
 
 #. Log in to the management console.
 
-#. Click |image1| in the upper left corner and select your region and project.
+#. Click |image1| in the upper left corner and select a region and project.
 
-#. Under **Computing**, choose **Elastic Cloud Server**.
+#. Under **Computing**, click **Elastic Cloud Server**.
 
 #. On the **Elastic Cloud Server** page, click the name of the target ECS.
 
-   The page providing details about the ECS is displayed.
+   The ECS details page is displayed.
 
 #. Click the **Security Groups** tab, expand the information of the security group, and view security group rules.
 
@@ -132,7 +132,7 @@ If a firewall is enabled on the ECS, check whether the firewall blocks the ping 
 
    View and set the firewall status.
 
-#. If the firewall is **On**, go to :ref:`4 <faq_connect_0004__en-us_topic_0105130172_li192824161474>`.
+#. If the firewall is **On**, go to step :ref:`4 <faq_connect_0004__en-us_topic_0105130172_li192824161474>`.
 
 #. .. _faq_connect_0004__en-us_topic_0105130172_li192824161474:
 
@@ -196,8 +196,8 @@ Check the ECS kernel parameters.
 
 .. _faq_connect_0004__en-us_topic_0105130172_en-us_topic_0096302298_section374314592329:
 
-Checking ACL Rules
-------------------
+Checking Network ACL Rules
+--------------------------
 
 By default, no ACL is configured for a VPC. If a network ACL is associated with a VPC, check the ACL rules.
 
@@ -215,8 +215,8 @@ By default, no ACL is configured for a VPC. If a network ACL is associated with 
 
 .. _faq_connect_0004__en-us_topic_0105130172_section108152100162:
 
-Checking Whether the Network Is Functional
-------------------------------------------
+Checking Whether the Network Is Normal
+--------------------------------------
 
 #. Use another ECS in the same region to check whether the local network is functional.
 
@@ -255,4 +255,4 @@ Generally, the default route of an OS will preferentially select the primary NIC
 
 -  If the ECS has multiple NICs and the EIP is bound to an extension NIC, configure policy routing on the ECS for network communication with the extension NIC.
 
-.. |image1| image:: /_static/images/en-us_image_0210779229.png
+.. |image1| image:: /_static/images/en-us_image_0000002188678994.png

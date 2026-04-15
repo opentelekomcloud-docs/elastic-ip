@@ -19,7 +19,7 @@ Procedure
 3. Hover on the upper left corner to display **Service List** and choose **Management & Deployment** > **Cloud Eye**.
 4. In the navigation pane on the left, choose **Cloud Service Monitoring** > **Elastic IP and Bandwidth**.
 5. On the **Cloud Service Monitoring** page, click **Export Data**.
-6. Configure the time range, resource type, dimension, monitored object, and metric.
+6. Configure **Time Range**, **Resource Type**, **Dimension**, **Monitored Object**, and **Metrics** as needed.
 7. Click **Export**.
 
 -  The first row in the exported CSV file displays the username, region, service, instance name, instance ID, metric name, metric data, time, and timestamp. You can view historical monitoring data.

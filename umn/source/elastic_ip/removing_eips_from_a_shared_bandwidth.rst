@@ -26,7 +26,7 @@ Procedure
 6. Set the EIP bandwidth after the EIP is removed. The bandwidth (Mbit/s) of an EIP can be changed.
 
 
-   .. figure:: /_static/images/en-us_image_0000001925615569.png
+   .. figure:: /_static/images/en-us_image_0000002531823460.png
       :alt: **Figure 1** Removing an EIP from a shared bandwidth
 
       **Figure 1** Removing an EIP from a shared bandwidth
