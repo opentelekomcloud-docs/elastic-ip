@@ -36,7 +36,7 @@ POST /v3/{project_id}/eip/publicips/{publicip_id}/associate-instance
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request body parameter
+.. table:: **Table 2** Request body parameters
 
    +-----------+-----------+----------------------------------------------------------------------------------------------------------------------------+-------------+
    | Parameter | Mandatory | Type                                                                                                                       | Description |
@@ -257,7 +257,7 @@ Response Parameters
    |                         |                                                                                                                       | Maximum length: **36**                                                                                                                                                                                                               |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | publicip_pool_name      | String                                                                                                                | -  Network type of an EIP, including public EIP pool (for example, **5_bgp** or **5_sbgp**) and dedicated EIP pool.                                                                                                                  |
-   |                         |                                                                                                                       | -  For details about the dedicated EIP pool, see the APIs about **publcip_pool**.                                                                                                                                                    |
+   |                         |                                                                                                                       | -  For details about the dedicated EIP pool, see the APIs about **publicip_pool**.                                                                                                                                                   |
    |                         |                                                                                                                       |                                                                                                                                                                                                                                      |
    |                         |                                                                                                                       | Minimum length: **0**                                                                                                                                                                                                                |
    |                         |                                                                                                                       |                                                                                                                                                                                                                                      |
@@ -354,6 +354,12 @@ Response Parameters
    |                       |                       | Minimum length: **0**                                                         |
    |                       |                       |                                                                               |
    |                       |                       | Maximum length: **36**                                                        |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------+
+   | port_vif_details      | String                | -  Details about the NIC virtual interface.                                   |
+   |                       |                       |                                                                               |
+   |                       |                       | Minimum length: **0**                                                         |
+   |                       |                       |                                                                               |
+   |                       |                       | Maximum length: **255**                                                       |
    +-----------------------+-----------------------+-------------------------------------------------------------------------------+
 
 .. _associatepublicips__en-us_topic_0000001403541982_response_publicipbandwidthinfo:
@@ -474,7 +480,8 @@ Normal response to POST requests
          "private_ip_address" : "xx.xx.xx.xx",
          "vni" : null,
          "vpc_id" : "a26c231a-cf6f-48d3-83db-1e261d0e235a",
-         "vtep" : null
+         "vtep" : null,
+         "port_vif_details" : "{\"primary_interface\": true}"
        }
      },
      "request_id" : "ead9f912bd1191e3d5f0037141098d91"

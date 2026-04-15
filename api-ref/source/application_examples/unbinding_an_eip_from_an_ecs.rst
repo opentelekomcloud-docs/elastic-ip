@@ -13,7 +13,7 @@ This section describes how to unbind an EIP from an ECS by calling APIs.
 Prerequisites
 -------------
 
--  You have created an ECS. For details, see section "Purchasing an ECS with Customized Configurations" in the *Elastic Cloud Server User Guide*.
+-  You have created an ECS. For details, see section "Creating an ECS in Custom Config Mode" in the *Elastic Cloud Server User Guide*.
 -  If you use a token for authentication, you must obtain the token and add **X-Auth-Token** to the request header when making an API call.
 
    .. note::

@@ -8,16 +8,16 @@ Pagination
 Function
 --------
 
-Neutron APIs v2.0 provides the pagination function. You can set parameters **limit** and **marker** in the URL to enable the desired number of items to be returned. All returned items are displayed in the ascending order of ID.
+Neutron APIs v2.0 provides the pagination function. You can set parameters **limit** and **marker** in the URL of the list request to enable the desired number of items to be returned. All returned items are displayed in the ascending order of ID.
 
 -  To access the next page of the request, perform the following configurations:
 
-   -  Replace the value of **marker** in the original access request URL. Replace the value of **marker** to the value of **marker** in the value of **herf** if the value of **rel** in the response is **next**.
+   -  Replace the value of **marker** in the original access request URL. Replace the value of **marker** to the value of **marker** in the value of **href** if the value of **rel** in the response is **next**.
    -  Set the value of **page_reverse** to **False**.
 
 -  To access the previous page of the request, perform the following configurations:
 
-   -  Replace the value of **marker** in the original access request URL. Replace the value of **marker** to the value of **marker** in the value of **herf** if the value of **rel** in the response is **previous**.
+   -  Replace the value of **marker** in the original access request URL. Replace the value of **marker** to the value of **marker** in the value of **href** if the value of **rel** in the response is **previous**.
    -  Set the value of **page_reverse** to **True**.
 
 Request Parameters
@@ -53,7 +53,27 @@ Example Request
 Response Parameters
 -------------------
 
-None
+.. table:: **Table 2** Response parameter
+
+   +-----------------------+------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter             | Type                                                                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                |
+   +=======================+============================================================================================================+============================================================================================================================================================================================================================================================================================================================================================================================================+
+   | {resources}_links     | Array of :ref:`{resources}_link <eip_openstackapi_0004__en-us_topic_0201534194_table109221759807>` objects | Specifies the pagination information. For details, see :ref:`Table 3 <eip_openstackapi_0004__en-us_topic_0201534194_table109221759807>`. **{resources}** indicates the resource name, for example, **ports**, **networks**, **subnets**, **routers**, **firewall_rules**, **firewall_policies**, **firewall_groups**, **security_groups**, **subnetpools**, **floatingips**, and **security_group_rules**. |
+   |                       |                                                                                                            |                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                       |                                                                                                            | Only when **limit** is used for filtering and the number of resources exceeds the value of **limit** or 2000 (default value of **limit**), value **next** will be returned for **rel** and a link for **href**.                                                                                                                                                                                            |
+   +-----------------------+------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _eip_openstackapi_0004__en-us_topic_0201534194_table109221759807:
+
+.. table:: **Table 3** {resources}_link object
+
+   +-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter | Type   | Description                                                                                                                              |
+   +===========+========+==========================================================================================================================================+
+   | href      | String | Specifies the API link.                                                                                                                  |
+   +-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | rel       | String | The API link is used to query the next or previous page. **next**: The next page is queried. **previous**: The previous page is queried. |
+   +-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example Response
 ----------------

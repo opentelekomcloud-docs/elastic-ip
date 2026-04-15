@@ -22,15 +22,15 @@ GET /v1/{project_id}/bandwidths/{bandwidth_id}
 .. table:: **Table 1** Parameter description
 
    +--------------+-----------+----------------------------------------------------------------------+
-   | Name         | Mandatory | Description                                                          |
+   | Parameter    | Mandatory | Description                                                          |
    +==============+===========+======================================================================+
    | project_id   | Yes       | Specifies the project ID.                                            |
    +--------------+-----------+----------------------------------------------------------------------+
    | bandwidth_id | Yes       | Specifies the bandwidth ID, which uniquely identifies the bandwidth. |
    +--------------+-----------+----------------------------------------------------------------------+
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
@@ -38,19 +38,19 @@ Request Message
 
 -  Example request
 
-   .. code-block::
+   .. code-block:: text
 
-      Get https://{Endpoint}//v1/{project_id}/bandwidths/{bandwidth_id}
+      GET https://{Endpoint}/v1/{project_id}/bandwidths/{bandwidth_id}
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 
    .. table:: **Table 2** Response parameter
 
       +-----------+---------------------------------------------------------------------------------------+---------------------------------+
-      | Name      | Type                                                                                  | Description                     |
+      | Parameter | Type                                                                                  | Description                     |
       +===========+=======================================================================================+=================================+
       | bandwidth | :ref:`bandwidth <eip_apibandwidth_0001__en-us_topic_0201534167_table60972066>` object | Specifies the bandwidth object. |
       +-----------+---------------------------------------------------------------------------------------+---------------------------------+
@@ -60,7 +60,7 @@ Response Message
    .. table:: **Table 3** Description of the **bandwidth** field
 
       +-----------------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Name                  | Type                                                                                                | Description                                                                                                                                                                                                         |
+      | Parameter             | Type                                                                                                | Description                                                                                                                                                                                                         |
       +=======================+=====================================================================================================+=====================================================================================================================================================================================================================+
       | name                  | String                                                                                              | -  Specifies the bandwidth name.                                                                                                                                                                                    |
       |                       |                                                                                                     | -  The value can contain 1 to 64 characters, including letters, digits, underscores (_), hyphens (-), and periods (.).                                                                                              |
@@ -95,13 +95,9 @@ Response Message
       | enterprise_project_id | String                                                                                              | -  Specifies the enterprise project ID. The value is **0** or a string that contains a maximum of 36 characters in UUID format with hyphens (-).                                                                    |
       |                       |                                                                                                     | -  When creating a bandwidth, associate the enterprise project ID with the bandwidth.                                                                                                                               |
       |                       |                                                                                                     | -  If this parameter is not specified, the default value is **0**, which indicates that the default enterprise project is used.                                                                                     |
-      |                       |                                                                                                     |                                                                                                                                                                                                                     |
-      |                       |                                                                                                     | .. note::                                                                                                                                                                                                           |
-      |                       |                                                                                                     |                                                                                                                                                                                                                     |
-      |                       |                                                                                                     |    This parameter is unsupported. Do not use it.                                                                                                                                                                    |
       +-----------------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | status                | String                                                                                              | -  Specifies the bandwidth status.                                                                                                                                                                                  |
-      |                       |                                                                                                     | -  Possible values are as follows:                                                                                                                                                                                  |
+      |                       |                                                                                                     | -  Range:                                                                                                                                                                                                           |
       |                       |                                                                                                     |                                                                                                                                                                                                                     |
       |                       |                                                                                                     |    -  **FREEZED** (Frozen)                                                                                                                                                                                          |
       |                       |                                                                                                     |    -  **NORMAL** (Normal)                                                                                                                                                                                           |
@@ -112,31 +108,44 @@ Response Message
       | updated_at            | String                                                                                              | -  Specifies the time (UTC) when the bandwidth is updated.                                                                                                                                                          |
       |                       |                                                                                                     | -  Format: *yyyy-MM-ddTHH:mm:ss*                                                                                                                                                                                    |
       +-----------------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | public_border_group   | String                                                                                              | Specifies whether it is in a central site or an edge site.                                                                                                                                                          |
+      |                       |                                                                                                     |                                                                                                                                                                                                                     |
+      |                       |                                                                                                     | Range:                                                                                                                                                                                                              |
+      |                       |                                                                                                     |                                                                                                                                                                                                                     |
+      |                       |                                                                                                     | -  center                                                                                                                                                                                                           |
+      |                       |                                                                                                     | -  *Edge site name*                                                                                                                                                                                                 |
+      |                       |                                                                                                     |                                                                                                                                                                                                                     |
+      |                       |                                                                                                     | An EIP can only be bound to a resource of the same region.                                                                                                                                                          |
+      +-----------------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. _eip_apibandwidth_0001__en-us_topic_0201534167_table30936422:
 
    .. table:: **Table 4** **publicip_info** object
 
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
-      | Name                  | Type                  | Description                                                                                                   |
-      +=======================+=======================+===============================================================================================================+
-      | publicip_id           | String                | Specifies the ID of the EIP that uses the bandwidth.                                                          |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
-      | publicip_address      | String                | Specifies the obtained EIP if only IPv4 EIPs are available.                                                   |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
-      | ip_version            | Integer               | -  Specifies the IP address version.                                                                          |
-      |                       |                       | -  Possible values are as follows:                                                                            |
-      |                       |                       |                                                                                                               |
-      |                       |                       |    -  **4**: IPv4                                                                                             |
-      |                       |                       |    -  **6**: IPv6 (IPv6 is not supported currently.)                                                          |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
-      | publicip_type         | String                | -  Specifies the EIP type.                                                                                    |
-      |                       |                       | -  The value can be **5_bgp** (Dynamic BGP) or **5_mailbgp** (Mail BGP).                                      |
-      |                       |                       | -  Constraints:                                                                                               |
-      |                       |                       |                                                                                                               |
-      |                       |                       |    -  The configured value must be supported by the system.                                                   |
-      |                       |                       |    -  **publicip_id** is an IPv4 port. If **publicip_type** is not specified, the default value is **5_bgp**. |
-      +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+      +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter             | Type                  | Description                                                                                                                               |
+      +=======================+=======================+===========================================================================================================================================+
+      | publicip_id           | String                | Specifies the ID of the EIP that uses the bandwidth.                                                                                      |
+      +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+      | publicip_address      | String                | Specifies the obtained EIP if only IPv4 EIPs are available.                                                                               |
+      +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+      | ip_version            | Integer               | -  Specifies the IP address version.                                                                                                      |
+      |                       |                       | -  Range:                                                                                                                                 |
+      |                       |                       |                                                                                                                                           |
+      |                       |                       |    -  **4**: IPv4                                                                                                                         |
+      |                       |                       |    -  **6**: IPv6                                                                                                                         |
+      +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+      | publicip_type         | String                | -  Specifies the EIP type.                                                                                                                |
+      |                       |                       | -  Range:                                                                                                                                 |
+      |                       |                       |                                                                                                                                           |
+      |                       |                       |    -  For region **eu-de**: **5_bgp** (Dynamic BGP), **5_mailbgp** (Mail BGP), **5_gray** (Dedicated Load Balancer), and **5_dualStack**. |
+      |                       |                       |    -  For region **eu-nl**: **5_bgp** (Dynamic BGP), **5_mailbgp** (Mail BGP), and **5_dualStack**                                        |
+      |                       |                       |                                                                                                                                           |
+      |                       |                       | -  Constraints:                                                                                                                           |
+      |                       |                       |                                                                                                                                           |
+      |                       |                       |    -  The configured value must be supported by the system.                                                                               |
+      |                       |                       |    -  **publicip_id** is an IPv4 port. If **publicip_type** is not specified, the default value is **5_bgp**.                             |
+      +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  Example response
 
@@ -148,6 +157,7 @@ Response Message
           "name": "EIPResourceSetup_1553594229",
           "size": 5,
           "share_type": "PER",
+          "public_border_group": "center",
           "publicip_info": [
             {
               "publicip_id": "22b02f40-b95f-465a-ae9b-7c8b0f042a41",

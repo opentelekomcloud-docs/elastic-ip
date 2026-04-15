@@ -15,8 +15,8 @@ URI
 
 GET /v2.0/eip/floatingips_v6/{floatingip_id}
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
@@ -28,8 +28,8 @@ Request Message
 
       GET https://{Endpoint}//v2.0/eip/floatingips_v6/2dedb5e7-cb70-4e78-b50f-d88c8321d161
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 
@@ -68,6 +68,16 @@ Response Message
       +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
       | tenant_id             | String                | Specifies the project ID.                                                                      |
       +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
+      | project_id            | String                | Specifies the project ID.                                                                      |
+      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
+      | created_at            | String                | Specifies the time when the resource was created.                                              |
+      |                       |                       |                                                                                                |
+      |                       |                       | Format: *yyyy-MM-ddTHH:mm:ss*                                                                  |
+      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
+      | updated_at            | String                | Specifies the time when the resource was updated.                                              |
+      |                       |                       |                                                                                                |
+      |                       |                       | Format: *yyyy-MM-ddTHH:mm:ss*                                                                  |
+      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------+
 
 -  Example response
 
@@ -79,13 +89,13 @@ Response Message
           "status": "DOWN",
           "router_id": null,
           "tenant_id": "26ae5181a416420998eb2093aaed84d9",
-          "project_id": "26ae5181a416420998eb2093aaed84d9",
           "floating_network_id": "0a2228f2-7f8a-45f1-8e09-9039e1d09975",
           "fixed_ip_address": null,
           "floating_ip_address": "cdcd:910a:2222:5498:8475:1111:c613:16e3",
           "port_id": null,
-          "created_at": "2019-03-26T09:52:41",
-          "updated_at": "2019-03-26T09:52:45"
+          "project_id": "26ae5181a416420998eb2093aaed84d9",
+          "created_at": "2024-05-23T09:20:59",
+          "updated_at": "2024-05-28T15:02:53"
         }
       }
 

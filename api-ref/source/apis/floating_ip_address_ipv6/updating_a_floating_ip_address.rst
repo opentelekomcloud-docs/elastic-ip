@@ -21,8 +21,8 @@ URI
 
 PUT /v2.0/eip/floatingips_v6/{floatingip_id}
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
@@ -69,8 +69,8 @@ Request Message
           }
       }
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 

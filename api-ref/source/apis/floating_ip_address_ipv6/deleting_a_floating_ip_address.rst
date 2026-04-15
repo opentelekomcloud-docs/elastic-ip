@@ -15,8 +15,8 @@ URI
 
 DELETE /v2.0/eip/floatingips_v6/{floatingip_id}
 
-Request Message
----------------
+Request Parameters
+------------------
 
 -  Request parameter
 
@@ -28,8 +28,8 @@ Request Message
 
       DELETE https://{Endpoint}/v2.0/eip/floatingips_v6/a95ec431-8473-463b-aede-34fb048ee3a7
 
-Response Message
-----------------
+Response Parameters
+-------------------
 
 -  Response parameter
 

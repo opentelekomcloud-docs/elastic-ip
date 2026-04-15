@@ -7,6 +7,8 @@ EIPs
 
 -  :ref:`Querying All EIPs <listpublicipsv3>`
 -  :ref:`Querying EIP Details <showpublicipv3>`
+-  :ref:`Assigning an EIP <createpublicipv3>`
+-  :ref:`Releasing an EIP <deletepublicip>`
 -  :ref:`Unbinding an EIP <disassociatepublicips>`
 -  :ref:`Binding an EIP <associatepublicips>`
 
@@ -16,5 +18,7 @@ EIPs
 
    querying_all_eips
    querying_eip_details
+   assigning_an_eip
+   releasing_an_eip
    unbinding_an_eip
    binding_an_eip
